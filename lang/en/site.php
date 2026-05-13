@@ -1,0 +1,55 @@
+<?php
+
+return [
+    'brand' => 'Power Falcon',
+    'nav' => [
+        'home' => 'Home',
+        'about' => 'About',
+        'products' => 'Products',
+        'contact' => 'Contact',
+        'dashboard' => 'Dashboard',
+    ],
+    'cta' => [
+        'view_products' => 'View Products',
+        'contact_us' => 'Contact Us',
+        'whatsapp' => 'WhatsApp',
+        'send' => 'Send Message',
+        'search' => 'Search',
+        'reset' => 'Reset',
+    ],
+    'home' => [
+        'eyebrow' => 'Industrial spare parts and control systems',
+        'title' => 'Trusted power generation parts, controls, and technical support.',
+        'intro' => 'Power Falcon supplies generator spare parts, control solutions, AVRs, battery chargers, actuators, solenoids, and technical support for manufacturers and panel builders across Egypt.',
+        'overview_title' => 'Built for reliable power systems',
+        'overview' => 'With more than three decades in electric generators and control systems, Power Falcon combines field experience with official partnerships to deliver dependable industrial products and responsive technical guidance.',
+        'featured' => 'Featured Products',
+        'values' => 'Quality Focus',
+    ],
+    'about' => [
+        'title' => 'Company Profile',
+        'intro' => 'Power Falcon is a specialized Egyptian company in electric generators, control systems, and industrial spare parts, serving the market since 1990.',
+        'history' => 'Our Journey',
+        'experience' => 'Technical Experience',
+        'vision' => 'Vision and Goals',
+    ],
+    'products' => [
+        'title' => 'Products',
+        'intro' => 'Explore a focused catalog of generator spare parts and industrial control products.',
+        'search_placeholder' => 'Search by product name...',
+        'all_categories' => 'All Categories',
+        'empty_title' => 'No products found',
+        'empty_text' => 'Try a different search term or category filter.',
+    ],
+    'contact' => [
+        'title' => 'Contact Power Falcon',
+        'intro' => 'Send an inquiry, request availability, or speak with the team directly by phone or WhatsApp.',
+        'name' => 'Full name',
+        'email' => 'Email',
+        'phone' => 'Phone',
+        'subject' => 'Subject',
+        'message' => 'Message',
+        'success' => 'Thank you. Your message has been received and our team will contact you shortly.',
+        'address' => 'Cairo, Egypt',
+    ],
+];

@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    --pf-cyan: #079fd4;
+    --pf-cyan-dark: #0579a7;
+    --pf-indigo: #2d247f;
+    --pf-ink: #111827;
+    --pf-steel: #eef4f7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f7fafc;
+    color: var(--pf-ink);
+}
+
+.pf-container {
+    width: min(1180px, calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.pf-gradient {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(7, 159, 212, .18), transparent 28rem),
+        linear-gradient(135deg, #ffffff 0%, #f4f9fb 46%, #eef4f7 100%);
+}
+
+.pf-dark {
+    background:
+        linear-gradient(135deg, rgba(45, 36, 127, .96), rgba(17, 24, 39, .98)),
+        var(--pf-indigo);
+}
+
+.pf-card {
+    border: 1px solid rgba(17, 24, 39, .08);
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 18px 50px rgba(17, 24, 39, .08);
+}
+
+.pf-focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.pf-focus:focus {
+    outline-color: var(--pf-cyan);
+}
+
+.pf-hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 6px auto;
+    background-color: var(--pf-ink);
+    transition: all .3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pf-line-1 {
+    top: 8px;
+}
+
+.pf-line-2 {
+    top: 17px;
+}
+
+.pf-line-3 {
+    top: 26px;
+}
+
+#pf-menu-toggle.is-open .pf-line-1 {
+    top: 17px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+#pf-menu-toggle.is-open .pf-line-2 {
+    opacity: 0;
+}
+
+#pf-menu-toggle.is-open .pf-line-3 {
+    top: 17px;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+#pf-mobile-menu {
+    animation: pf-menu-slide-down .3s ease;
+}
+
+@keyframes pf-menu-slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pf-reveal {
+    animation: pf-rise .65s ease both;
+}
+
+.pf-count-card {
+    display: grid;
+    gap: .15rem;
+}
+
+.pf-stat-card {
+    transform-origin: center bottom;
+}
+
+.pf-count.is-counting {
+    text-shadow: 0 8px 24px rgba(7, 159, 212, .15);
+}
+
+@keyframes pf-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
