@@ -39,8 +39,9 @@ return [
         'phone' => env('POWER_FALCON_PHONE', '+20 100 000 0000'),
         'phone_alt' => env('POWER_FALCON_PHONE_ALT', '+20 120 000 0000'),
         'whatsapp' => env('POWER_FALCON_WHATSAPP', '201000000000'),
-        'address' => env('POWER_FALCON_ADDRESS', 'Cairo, Egypt'),
-        'maps_url' => env('POWER_FALCON_MAPS_URL', 'https://maps.google.com/?q=Cairo,Egypt'),
+        'address' => env('POWER_FALCON_ADDRESS', '4 Dr Mohammed Fouad Shokry, Bein Al Ganayen, El Weili, Cairo Governorate 4390202'),
+        'maps_url' => env('POWER_FALCON_MAPS_URL', 'https://maps.app.goo.gl/uVN5GAhvomTNJrzk8?g_st=awb'),
+        'maps_embed_url' => env('POWER_FALCON_MAPS_EMBED_URL', 'https://maps.google.com/maps?q=4%20Dr%20Mohammed%20Fouad%20Shokry%2C%20Bein%20Al%20Ganayen%2C%20El%20Weili%2C%20Cairo%20Governorate%204390202&z=16&output=embed'),
     ],
 
 ];

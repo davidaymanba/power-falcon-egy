@@ -50,6 +50,6 @@ return [
         'subject' => 'Subject',
         'message' => 'Message',
         'success' => 'Thank you. Your message has been received and our team will contact you shortly.',
-        'address' => 'Cairo, Egypt',
+        'address' => '4 Dr Mohammed Fouad Shokry, Bein Al Ganayen, El Weili, Cairo Governorate 4390202',
     ],
 ];

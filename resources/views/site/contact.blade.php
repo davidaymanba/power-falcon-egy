@@ -46,7 +46,7 @@
                         <a href="https://wa.me/{{ str_replace(['+', ' ', '-'], '', config('services.power_falcon.phone')) }}" target="_blank" class="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 font-bold text-white transition hover:bg-[#20BA58]">
                             💬 {{ __('site.cta.whatsapp') }}
                         </a>
-                        <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-[#079fd4] px-4 py-2 font-bold text-[#079fd4] transition hover:bg-[#079fd4]/10">
+                        <a href="{{ config('services.power_falcon.maps_url') }}" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-[#079fd4] px-4 py-2 font-bold text-[#079fd4] transition hover:bg-[#079fd4]/10">
                             🗺️ Maps
                         </a>
                     </div>
@@ -57,7 +57,7 @@
             <div class="lg:col-span-2">
                 <!-- Map -->
                 <div class="mb-8 overflow-hidden rounded-2xl border border-slate-200 shadow-md" style="height: 300px;">
-                    <iframe src="https://maps.google.com/maps?q=Cairo,Egypt&z=13&output=embed" width="100%" height="100%" style="border:none;" loading="lazy"></iframe>
+                    <iframe src="{{ config('services.power_falcon.maps_embed_url', config('services.power_falcon.maps_url')) }}" width="100%" height="100%" style="border:none;" loading="lazy"></iframe>
                 </div>
 
                 <!-- Contact Form -->
