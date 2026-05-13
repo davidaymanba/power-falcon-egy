@@ -24,7 +24,7 @@
             </a>
             
             <!-- Desktop Navigation -->
-            <nav class="hidden items-center gap-1 text-sm font-semibold text-slate-700 md:flex">
+            <nav class="hidden items-center gap-1 text-sm font-semibold text-slate-700 lg:flex">
                 @foreach ($nav as $item)
                     <a href="{{ route($item['route']) }}" class="rounded px-3 py-2 transition hover:bg-cyan-50 hover:text-[#079fd4] {{ request()->routeIs($item['route']) ? 'text-[#2d247f]' : '' }}">{{ $item['label'] }}</a>
                 @endforeach
@@ -35,7 +35,7 @@
             </nav>
             
             <!-- Mobile Menu Button -->
-            <button type="button" id="pf-menu-toggle" class="relative h-10 w-10 md:hidden" aria-label="Toggle menu">
+            <button type="button" id="pf-menu-toggle" class="relative h-10 w-10 lg:hidden" aria-label="Toggle menu">
                 <span class="pf-hamburger-line pf-line-1"></span>
                 <span class="pf-hamburger-line pf-line-2"></span>
                 <span class="pf-hamburger-line pf-line-3"></span>
@@ -43,7 +43,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <nav id="pf-mobile-menu" class="hidden border-t border-slate-200/80 bg-white md:hidden">
+        <nav id="pf-mobile-menu" class="hidden border-t border-slate-200/80 bg-white lg:hidden">
             <div class="pf-container flex flex-col">
                 @foreach ($nav as $item)
                     <a href="{{ route($item['route']) }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-cyan-50 hover:text-[#079fd4] {{ request()->routeIs($item['route']) ? 'text-[#2d247f]' : '' }}">{{ $item['label'] }}</a>

@@ -219,9 +219,9 @@
                 }
             </style>
             
-            <div class="partner-carousel overflow-x-auto md:overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-4 sm:p-6 md:p-8">
+            <div class="partner-carousel overflow-x-auto lg:overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-4 sm:p-6 md:p-8">
                 <!-- Duplicate for seamless loop -->
-                <div class="flex md:animate-scroll gap-4 sm:gap-6 md:gap-12">
+                <div class="flex lg:animate-scroll gap-4 sm:gap-6 md:gap-12">
                     <!-- Original logos -->
                     <div class="flex gap-4 min-w-full sm:gap-6 md:gap-12">
                         <div class="flex min-w-[130px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[160px] md:min-w-[220px]">
@@ -242,7 +242,7 @@
                     </div>
                     
                     <!-- Duplicated for seamless loop -->
-                    <div class="hidden md:flex gap-12 min-w-full">
+                    <div class="hidden lg:flex gap-12 min-w-full">
                         <div class="flex min-w-[220px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105">
                             <img src="{{ asset('images/partners/GILA ALTAWAKOL ELECTRIC.png') }}" alt="GILA ALTAWAKOL ELECTRIC" class="h-16 w-auto object-contain">
                         </div>
