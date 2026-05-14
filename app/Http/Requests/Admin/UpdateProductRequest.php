@@ -28,7 +28,7 @@ class UpdateProductRequest extends FormRequest
             'category_id' => ['nullable', 'exists:categories,id'],
             'description_ar' => ['nullable', 'string'],
             'description_en' => ['nullable', 'string'],
-            'image' => ['nullable', 'image', 'max:20480'],
+            'image' => ['nullable', 'image', 'max:51200'],
         ];
     }
 }

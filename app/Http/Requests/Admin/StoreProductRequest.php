@@ -28,7 +28,7 @@ class StoreProductRequest extends FormRequest
             'category_id' => ['nullable', 'exists:categories,id'],
             'description_ar' => ['nullable', 'string'],
             'description_en' => ['nullable', 'string'],
-            'image' => ['required', 'image', 'max:20480'],
+            'image' => ['required', 'image', 'max:51200'],
         ];
     }
 }

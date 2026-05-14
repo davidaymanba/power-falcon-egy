@@ -36,8 +36,8 @@ return [
     ],
 
     'power_falcon' => [
-        'phone' => env('POWER_FALCON_PHONE', '+20 100 000 0000'),
-        'phone_alt' => env('POWER_FALCON_PHONE_ALT', '+20 120 000 0000'),
+        'phone' => env('POWER_FALCON_PHONE', '+20 111 060 7533'),
+        'phone_alt' => env('POWER_FALCON_PHONE_ALT', '+20 111 119 7098'),
         'whatsapp' => env('POWER_FALCON_WHATSAPP', '201000000000'),
         'address' => env('POWER_FALCON_ADDRESS', '4 Dr Mohammed Fouad Shokry, Bein Al Ganayen, El Weili, Cairo Governorate 4390202'),
         'maps_url' => env('POWER_FALCON_MAPS_URL', 'https://maps.app.goo.gl/uVN5GAhvomTNJrzk8?g_st=awb'),
