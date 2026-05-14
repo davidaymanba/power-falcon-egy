@@ -46,6 +46,8 @@
             @endif
             @yield('content')
         </main>
+
+        @include('partials.whatsapp-widget')
     </div>
 </body>
 </html>

@@ -129,6 +129,16 @@ body {
     text-shadow: 0 8px 24px rgba(7, 159, 212, .15);
 }
 
+.pf-whatsapp-widget #pf-whatsapp-panel {
+    transform-origin: bottom right;
+}
+
+.pf-whatsapp-widget.is-open #pf-whatsapp-panel {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 @keyframes pf-rise {
     from {
         opacity: 0;

@@ -60,6 +60,8 @@
         @yield('content')
     </main>
 
+    @include('partials.whatsapp-widget')
+
     <footer class="pf-dark text-white">
         <div class="pf-container grid gap-8 py-12 md:grid-cols-[1.2fr_.8fr_.8fr]">
             <div>

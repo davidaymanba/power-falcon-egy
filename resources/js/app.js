@@ -25,6 +25,45 @@ const initMobileMenu = () => {
     });
 };
 
+const initWhatsappWidget = () => {
+	const widget = document.querySelector('.pf-whatsapp-widget');
+	const toggleBtn = document.getElementById('pf-whatsapp-toggle');
+	const closeBtn = document.getElementById('pf-whatsapp-close');
+
+	if (!widget || !toggleBtn || !closeBtn) {
+		return;
+	}
+
+	const openWidget = () => {
+		widget.classList.add('is-open');
+		toggleBtn.setAttribute('aria-expanded', 'true');
+	};
+
+	const closeWidget = () => {
+		widget.classList.remove('is-open');
+		toggleBtn.setAttribute('aria-expanded', 'false');
+	};
+
+	toggleBtn.addEventListener('click', (event) => {
+		event.stopPropagation();
+		widget.classList.contains('is-open') ? closeWidget() : openWidget();
+	});
+
+	closeBtn.addEventListener('click', closeWidget);
+
+	widget.addEventListener('click', (event) => {
+		event.stopPropagation();
+	});
+
+	document.addEventListener('click', closeWidget);
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			closeWidget();
+		}
+	});
+};
+
 const animateCountUp = (element) => {
 	if (element.dataset.countAnimated === 'true') {
 		return;
@@ -89,9 +128,11 @@ const runRevealAnimations = () => {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         initMobileMenu();
+		initWhatsappWidget();
         runRevealAnimations();
     }, { once: true });
 } else {
     initMobileMenu();
+	initWhatsappWidget();
     runRevealAnimations();
 }
