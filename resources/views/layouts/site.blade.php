@@ -65,7 +65,7 @@
     <footer class="pf-dark text-white">
         <div class="pf-container grid gap-8 py-12 md:grid-cols-[1.2fr_.8fr_.8fr]">
             <div>
-                <img src="{{ asset('images/powerfalcon.jpg') }}" alt="Power Falcon" class="mb-5 h-16 w-36 rounded bg-white object-contain p-1">
+                <img src="{{ asset('images/powerfalcon.png') }}" alt="Power Falcon" class="mb-5 h-16 w-auto object-contain">
                 <p class="max-w-xl text-sm leading-7 text-cyan-50">{{ __('site.home.intro') }}</p>
             </div>
             <div>
