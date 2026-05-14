@@ -20,7 +20,7 @@
     <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
         <div class="pf-container flex items-center justify-between py-3">
             <a href="{{ route('home') }}" class="flex items-center gap-3">
-                <img src="{{ asset('images/powerfalcon.jpg') }}" alt="Power Falcon" class="h-10 w-20 rounded bg-white object-contain sm:h-12 sm:w-24 md:w-32">
+                <img src="{{ asset('images/powerfalcon.png') }}" alt="Power Falcon" class="h-10 w-auto object-contain sm:h-12 md:h-14">
             </a>
             
             <!-- Desktop Navigation -->
