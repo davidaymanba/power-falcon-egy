@@ -25,6 +25,34 @@ const initMobileMenu = () => {
     });
 };
 
+const initThemeToggle = () => {
+	const toggles = document.querySelectorAll('.pf-theme-toggle');
+
+	if (!toggles.length) {
+		return;
+	}
+
+	const setTheme = (theme) => {
+		const isDark = theme === 'dark';
+
+		document.documentElement.classList.toggle('dark', isDark);
+		localStorage.setItem('pf-theme', theme);
+
+		toggles.forEach((toggle) => {
+			toggle.setAttribute('aria-pressed', String(isDark));
+		});
+	};
+
+	const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+	setTheme(currentTheme);
+
+	toggles.forEach((toggle) => {
+		toggle.addEventListener('click', () => {
+			setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+		});
+	});
+};
+
 const initWhatsappWidget = () => {
 	const widget = document.querySelector('.pf-whatsapp-widget');
 	const toggleBtn = document.getElementById('pf-whatsapp-toggle');
@@ -128,11 +156,13 @@ const runRevealAnimations = () => {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         initMobileMenu();
+		initThemeToggle();
 		initWhatsappWidget();
         runRevealAnimations();
     }, { once: true });
 } else {
     initMobileMenu();
+	initThemeToggle();
 	initWhatsappWidget();
     runRevealAnimations();
 }

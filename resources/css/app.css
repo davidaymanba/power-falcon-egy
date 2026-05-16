@@ -16,6 +16,13 @@
     --pf-indigo: #2d247f;
     --pf-ink: #111827;
     --pf-steel: #eef4f7;
+    color-scheme: light;
+}
+
+html.dark {
+    --pf-ink: #f8fafc;
+    --pf-steel: #111827;
+    color-scheme: dark;
 }
 
 html {
@@ -25,6 +32,7 @@ html {
 body {
     background: #f7fafc;
     color: var(--pf-ink);
+    transition: background-color .2s ease, color .2s ease;
 }
 
 .pf-container {
@@ -69,6 +77,180 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.pf-theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(148, 163, 184, .45);
+    border-radius: 999px;
+    color: #2d247f;
+    background: rgba(255, 255, 255, .72);
+    transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.pf-theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: var(--pf-cyan);
+    color: var(--pf-cyan);
+}
+
+.pf-theme-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+}
+
+.pf-theme-sun,
+html.dark .pf-theme-moon,
+html.dark .pf-theme-label-light {
+    display: none;
+}
+
+html.dark .pf-theme-sun,
+html.dark .pf-theme-label-dark {
+    display: block;
+}
+
+.pf-theme-label-dark {
+    display: none;
+}
+
+.pf-theme-toggle-mobile {
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    border-radius: 0;
+    border-width: 1px 0 0;
+    padding: .85rem 1rem;
+    font-size: .875rem;
+    font-weight: 700;
+    background: transparent;
+}
+
+.pf-theme-toggle-mobile .pf-theme-icon {
+    margin-inline-start: auto;
+}
+
+html.dark body {
+    background: #020617;
+    color: #f8fafc;
+}
+
+html.dark header {
+    border-color: rgba(51, 65, 85, .9);
+    background: rgba(2, 6, 23, .9);
+}
+
+html.dark #pf-mobile-menu {
+    border-color: rgba(51, 65, 85, .9);
+    background: #020617;
+}
+
+html.dark .pf-theme-toggle {
+    color: #e2e8f0;
+    border-color: rgba(71, 85, 105, .9);
+    background: rgba(15, 23, 42, .86);
+}
+
+html.dark .pf-theme-toggle:hover {
+    color: #67e8f9;
+    border-color: rgba(7, 159, 212, .9);
+}
+
+html.dark .bg-white,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+    background-color: #0f172a;
+}
+
+html.dark .bg-white\/90 {
+    background-color: rgba(2, 6, 23, .9);
+}
+
+html.dark .bg-white\/10 {
+    background-color: rgba(255, 255, 255, .08);
+}
+
+html.dark .from-slate-50.to-white,
+html.dark .from-slate-50 {
+    --tw-gradient-from: #020617;
+    --tw-gradient-to: #0f172a;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+html.dark .from-slate-50.to-white {
+    background-image: linear-gradient(to bottom right, #020617, #0f172a);
+}
+
+html.dark .to-white {
+    --tw-gradient-to: #0f172a;
+}
+
+html.dark .from-white {
+    --tw-gradient-from: #020617;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+html.dark .to-transparent {
+    --tw-gradient-to: transparent;
+}
+
+html.dark .text-\[\#111827\],
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700 {
+    color: #f8fafc;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+    color: #cbd5e1;
+}
+
+html.dark .text-\[\#2d247f\] {
+    color: #67e8f9;
+}
+
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-300,
+html.dark .border-emerald-100 {
+    border-color: rgba(71, 85, 105, .9);
+}
+
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl,
+html.dark .shadow-2xl {
+    --tw-shadow-color: rgba(0, 0, 0, .45);
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+    border-color: rgba(71, 85, 105, .95);
+    background: #020617;
+    color: #f8fafc;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #94a3b8;
+}
+
+html.dark iframe {
+    filter: invert(.9) hue-rotate(180deg);
+}
+
+html.dark .hover\:bg-cyan-50:hover,
+html.dark .hover\:bg-emerald-50\/60:hover,
+html.dark .hover\:bg-slate-100:hover {
+    background-color: rgba(7, 159, 212, .12);
 }
 
 .pf-line-1 {

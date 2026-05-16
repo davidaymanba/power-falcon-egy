@@ -196,70 +196,66 @@
         </div>
 
         <!-- Animated Partners Carousel -->
+        @php
+            $partners = [
+                ['src' => 'images/partners/GILA ALTAWAKOL ELECTRIC.png', 'alt' => 'GILA ALTAWAKOL ELECTRIC'],
+                ['src' => 'images/partners/Orascome Construction company.png', 'alt' => 'Orascome Construction'],
+                ['src' => 'images/partners/Orascome trading company .png', 'alt' => 'Orascome Trading'],
+                ['src' => 'images/partners/PetroJet.png', 'alt' => 'PetroJet'],
+                ['src' => 'images/partners/The Arab Contractors.png', 'alt' => 'The Arab Contractors'],
+            ];
+        @endphp
         <div class="relative">
             <style>
-                @keyframes scroll-left {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
+                @keyframes partners-marquee {
+                    from { transform: translateX(0); }
+                    to { transform: translateX(-33.333333%); }
                 }
-                .animate-scroll {
-                    animation: none;
-                }
-                @media (min-width: 1024px) {
-                    .animate-scroll {
-                        animation: scroll-left 40s linear infinite;
-                    }
 
-                    .partner-carousel:hover .animate-scroll {
-                        animation-play-state: paused;
-                    }
+                .partner-carousel {
+                    --partner-gap: 1rem;
+                }
+
+                .partner-track {
+                    display: flex;
+                    width: max-content;
+                    will-change: transform;
+                    animation: partners-marquee 26s linear infinite;
+                }
+
+                .partner-set {
+                    display: flex;
+                    flex: none;
+                }
+
+                .partner-logo {
+                    margin-inline-end: var(--partner-gap);
+                }
+
+                .partner-carousel:hover .partner-track {
+                    animation-play-state: paused;
+                }
+
+                @media (min-width: 640px) {
+                    .partner-carousel { --partner-gap: 1.5rem; }
+                }
+
+                @media (min-width: 768px) {
+                    .partner-carousel { --partner-gap: 3rem; }
                 }
             </style>
             
-            <div class="partner-carousel overflow-x-auto lg:overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-4 sm:p-6 md:p-8">
-                <!-- Duplicate for seamless loop -->
-                <div class="flex animate-scroll gap-4 sm:gap-6 md:gap-12 lg:w-max lg:flex-nowrap">
-                    <!-- Original logos -->
-                    <div class="flex gap-4 min-w-full shrink-0 sm:gap-6 md:gap-12 lg:w-max lg:min-w-0 lg:flex-nowrap">
-                        <div class="flex min-w-[130px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[160px] md:min-w-[220px] lg:w-[200px]">
-                            <img src="{{ asset('images/partners/GILA ALTAWAKOL ELECTRIC.png') }}" alt="GILA ALTAWAKOL ELECTRIC" class="h-16 w-auto object-contain">
+            <div class="partner-carousel overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-4 sm:p-6 md:p-8">
+                <div class="partner-track">
+                    @for ($set = 0; $set < 3; $set++)
+                        <div class="partner-set" aria-hidden="{{ $set === 0 ? 'false' : 'true' }}">
+                            @foreach ($partners as $partner)
+                                <div class="partner-logo flex h-28 min-w-[150px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[180px] md:min-w-[220px] lg:w-[200px]">
+                                    <img src="{{ asset($partner['src']) }}" alt="{{ $partner['alt'] }}" class="h-16 w-auto object-contain">
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="flex min-w-[130px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[160px] md:min-w-[220px] lg:w-[200px]">
-                            <img src="{{ asset('images/partners/Orascome Construction company.png') }}" alt="Orascome Construction" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[130px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[160px] md:min-w-[220px] lg:w-[200px]">
-                            <img src="{{ asset('images/partners/Orascome trading company .png') }}" alt="Orascome Trading" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[130px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[160px] md:min-w-[220px] lg:w-[200px]">
-                            <img src="{{ asset('images/partners/PetroJet.png') }}" alt="PetroJet" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[130px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[160px] md:min-w-[220px] lg:w-[200px]">
-                            <img src="{{ asset('images/partners/The Arab Contractors.png') }}" alt="The Arab Contractors" class="h-16 w-auto object-contain">
-                        </div>
-                    </div>
-                    
-                    <!-- Duplicated for seamless loop -->
-                    <div class="hidden lg:flex gap-12 shrink-0 w-max">
-                        <div class="flex min-w-[220px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 lg:w-[200px]">
-                            <img src="{{ asset('images/partners/GILA ALTAWAKOL ELECTRIC.png') }}" alt="GILA ALTAWAKOL ELECTRIC" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[220px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 lg:w-[200px]">
-                            <img src="{{ asset('images/partners/Orascome Construction company.png') }}" alt="Orascome Construction" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[220px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 lg:w-[200px]">
-                            <img src="{{ asset('images/partners/Orascome trading company .png') }}" alt="Orascome Trading" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[220px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 lg:w-[200px]">
-                            <img src="{{ asset('images/partners/PetroJet.png') }}" alt="PetroJet" class="h-16 w-auto object-contain">
-                        </div>
-                        <div class="flex min-w-[220px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 lg:w-[200px]">
-                            <img src="{{ asset('images/partners/The Arab Contractors.png') }}" alt="The Arab Contractors" class="h-16 w-auto object-contain">
-                        </div>
-                    </div>
+                    @endfor
                 </div>
             </div>
 

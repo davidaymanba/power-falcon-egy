@@ -33,7 +33,7 @@
                             <span class="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4]">📍</span>
                             <div>
                                 <p class="font-semibold text-slate-900">Address</p>
-                                <p class="text-slate-600">{{ config('services.power_falcon.address') }}</p>
+                                <p class="text-slate-600">{{ __('site.contact.address') }}</p>
                             </div>
                         </div>
                     </div>
