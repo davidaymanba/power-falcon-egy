@@ -214,22 +214,31 @@
 
                 .partner-carousel {
                     --partner-gap: 1rem;
+                    direction: ltr;
+                    max-width: 100%;
                 }
 
                 .partner-track {
                     display: flex;
+                    flex-direction: row;
                     width: max-content;
+                    max-width: none;
+                    direction: ltr;
                     will-change: transform;
                     animation: partners-marquee 26s linear infinite;
                 }
 
                 .partner-set {
                     display: flex;
+                    flex-direction: row;
                     flex: none;
+                    direction: ltr;
                 }
 
                 .partner-logo {
-                    margin-inline-end: var(--partner-gap);
+                    width: 150px;
+                    min-width: 150px;
+                    margin-right: var(--partner-gap);
                 }
 
                 .partner-carousel:hover .partner-track {
@@ -238,19 +247,34 @@
 
                 @media (min-width: 640px) {
                     .partner-carousel { --partner-gap: 1.5rem; }
+                    .partner-logo {
+                        width: 180px;
+                        min-width: 180px;
+                    }
                 }
 
                 @media (min-width: 768px) {
                     .partner-carousel { --partner-gap: 3rem; }
+                    .partner-logo {
+                        width: 220px;
+                        min-width: 220px;
+                    }
+                }
+
+                @media (min-width: 1024px) {
+                    .partner-logo {
+                        width: 200px;
+                        min-width: 200px;
+                    }
                 }
             </style>
             
-            <div class="partner-carousel overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-4 sm:p-6 md:p-8">
+            <div class="partner-carousel overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-4 sm:p-6 md:p-8" dir="ltr">
                 <div class="partner-track">
                     @for ($set = 0; $set < 3; $set++)
                         <div class="partner-set" aria-hidden="{{ $set === 0 ? 'false' : 'true' }}">
                             @foreach ($partners as $partner)
-                                <div class="partner-logo flex h-28 min-w-[150px] flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105 sm:min-w-[180px] md:min-w-[220px] lg:w-[200px]">
+                                <div class="partner-logo flex h-28 flex-shrink-0 items-center justify-center rounded-lg bg-white p-4 shadow-md transition hover:shadow-lg hover:scale-105">
                                     <img src="{{ asset($partner['src']) }}" alt="{{ $partner['alt'] }}" class="h-16 w-auto object-contain">
                                 </div>
                             @endforeach
