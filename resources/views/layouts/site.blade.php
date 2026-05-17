@@ -42,7 +42,7 @@
                     <a href="{{ route('admin.products.index') }}" class="rounded px-3 py-2 text-[#2d247f] hover:bg-cyan-50">{{ __('site.nav.dashboard') }}</a>
                 @endauth
                 <a href="{{ route('locale.switch', $locale === 'en' ? 'ar' : 'en') }}" class="rounded border border-slate-200 px-3 py-2 text-[#2d247f] transition hover:border-[#079fd4]">{{ $locale === 'en' ? 'AR' : 'EN' }}</a>
-                <button type="button" class="pf-theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                <button type="button" class="pf-theme-toggle" aria-label="{{ __('site.ui.toggle_dark_mode') }}" aria-pressed="false">
                     <svg class="pf-theme-icon pf-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
@@ -54,7 +54,7 @@
             </nav>
             
             <!-- Mobile Menu Button -->
-            <button type="button" id="pf-menu-toggle" class="relative h-10 w-10 lg:hidden" aria-label="Toggle menu">
+            <button type="button" id="pf-menu-toggle" class="relative h-10 w-10 lg:hidden" aria-label="{{ __('site.ui.toggle_menu') }}">
                 <span class="pf-hamburger-line pf-line-1"></span>
                 <span class="pf-hamburger-line pf-line-2"></span>
                 <span class="pf-hamburger-line pf-line-3"></span>
@@ -71,9 +71,9 @@
                     <a href="{{ route('admin.products.index') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold text-[#2d247f] transition hover:bg-cyan-50">{{ __('site.nav.dashboard') }}</a>
                 @endauth
                 <a href="{{ route('locale.switch', $locale === 'en' ? 'ar' : 'en') }}" class="px-4 py-3 text-sm font-semibold text-[#2d247f] transition hover:bg-cyan-50">{{ $locale === 'en' ? 'العربية' : 'English' }}</a>
-                <button type="button" class="pf-theme-toggle pf-theme-toggle-mobile" aria-label="Toggle dark mode" aria-pressed="false">
-                    <span class="pf-theme-label-light">Dark mode</span>
-                    <span class="pf-theme-label-dark">Light mode</span>
+                <button type="button" class="pf-theme-toggle pf-theme-toggle-mobile" aria-label="{{ __('site.ui.toggle_dark_mode') }}" aria-pressed="false">
+                    <span class="pf-theme-label-light">{{ __('site.ui.dark_mode') }}</span>
+                    <span class="pf-theme-label-dark">{{ __('site.ui.light_mode') }}</span>
                     <svg class="pf-theme-icon pf-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
@@ -100,7 +100,7 @@
             </div>
             <div>
                 <h3 class="mb-4 font-bold">{{ __('site.nav.products') }}</h3>
-                <p class="text-sm leading-7 text-cyan-50">AVRs, controllers, actuators, solenoids, sensors, battery chargers, ATS panels.</p>
+                <p class="text-sm leading-7 text-cyan-50">{{ __('site.footer.products_text') }}</p>
             </div>
             <div>
                 <h3 class="mb-4 font-bold">{{ __('site.nav.contact') }}</h3>
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="border-t border-white/10 py-5 text-center text-xs text-cyan-50">© {{ date('Y') }} Power Falcon. All rights reserved.</div>
+        <div class="border-t border-white/10 py-5 text-center text-xs text-cyan-50">© {{ date('Y') }} Power Falcon. {{ __('site.ui.rights') }}</div>
     </footer>
 </body>
 </html>

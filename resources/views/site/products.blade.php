@@ -101,7 +101,7 @@
 <section class="bg-white py-16">
     <div class="pf-container">
         <div class="mb-8 animate-fade-in-up">
-            <h2 class="text-2xl font-black text-[#111827]">All Products</h2>
+            <h2 class="text-2xl font-black text-[#111827]">{{ __('site.products.all_products') }}</h2>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             @forelse ($products as $product)
@@ -124,13 +124,13 @@
         @if ($products->hasPages())
             <div class="mt-12 flex flex-col items-center gap-4 animate-fade-in-up">
                 <div class="text-sm text-slate-600">
-                    Showing {{ $products->firstItem() }} to {{ $products->lastItem() }} of {{ $products->total() }} results
+                    {{ __('site.products.showing_results', ['first' => $products->firstItem(), 'last' => $products->lastItem(), 'total' => $products->total()]) }}
                 </div>
                 <div class="flex gap-2">
                     @if ($products->onFirstPage())
-                        <span class="rounded-lg border border-slate-300 px-4 py-2 text-slate-400">← Previous</span>
+                        <span class="rounded-lg border border-slate-300 px-4 py-2 text-slate-400">← {{ __('site.products.previous') }}</span>
                     @else
-                        <a href="{{ $products->previousPageUrl() }}" class="rounded-lg border border-[#079fd4] px-4 py-2 text-[#079fd4] transition hover:bg-[#079fd4]/10 hover:scale-105 duration-300">← Previous</a>
+                        <a href="{{ $products->previousPageUrl() }}" class="rounded-lg border border-[#079fd4] px-4 py-2 text-[#079fd4] transition hover:bg-[#079fd4]/10 hover:scale-105 duration-300">← {{ __('site.products.previous') }}</a>
                     @endif
 
                     @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
@@ -142,9 +142,9 @@
                     @endforeach
 
                     @if ($products->hasMorePages())
-                        <a href="{{ $products->nextPageUrl() }}" class="rounded-lg border border-[#079fd4] px-4 py-2 text-[#079fd4] transition hover:bg-[#079fd4]/10 hover:scale-105 duration-300">Next →</a>
+                        <a href="{{ $products->nextPageUrl() }}" class="rounded-lg border border-[#079fd4] px-4 py-2 text-[#079fd4] transition hover:bg-[#079fd4]/10 hover:scale-105 duration-300">{{ __('site.products.next') }} →</a>
                     @else
-                        <span class="rounded-lg border border-slate-300 px-4 py-2 text-slate-400">Next →</span>
+                        <span class="rounded-lg border border-slate-300 px-4 py-2 text-slate-400">{{ __('site.products.next') }} →</span>
                     @endif
                 </div>
             </div>

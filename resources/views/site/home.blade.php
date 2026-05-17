@@ -13,7 +13,7 @@
         <div>
             <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/20 px-4 py-2">
                 <span class="h-2 w-2 rounded-full bg-[#079fd4]"></span>
-                <span class="text-sm font-semibold text-[#079fd4] uppercase tracking-wide">Special Offer</span>
+                <span class="text-sm font-semibold text-[#079fd4] uppercase tracking-wide">{{ __('site.home.eyebrow') }}</span>
             </div>
             <h1 class="mb-4 text-5xl font-black leading-tight text-white md:text-6xl">{{ __('site.home.title') }}</h1>
             <p class="mb-8 max-w-lg text-lg text-slate-200">{{ __('site.home.intro') }}</p>
@@ -27,16 +27,16 @@
             </div>
             <div class="mt-10 grid grid-cols-1 gap-6 text-white md:grid-cols-3">
                 <div class="pf-count-card pf-reveal" style="animation-delay: .05s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="30" data-suffix="+">30+</div>
-                    <div class="text-xs text-slate-300 md:text-sm">Years Experience</div>
+                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="35" data-suffix="+">35+</div>
+                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.years') }}</div>
                 </div>
                 <div class="pf-count-card pf-reveal" style="animation-delay: .12s;">
                     <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="112" data-suffix="+">112+</div>
-                    <div class="text-xs text-slate-300 md:text-sm">Products</div>
+                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.products') }}</div>
                 </div>
                 <div class="pf-count-card pf-reveal" style="animation-delay: .19s;">
                     <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="100" data-suffix="%">100%</div>
-                    <div class="text-xs text-slate-300 md:text-sm">Authentic</div>
+                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.authentic') }}</div>
                 </div>
             </div>
         </div>
@@ -112,8 +112,8 @@
 <section class="bg-white py-20">
     <div class="pf-container">
         <div class="mb-12 text-center">
-            <h2 class="mb-3 text-4xl font-black text-[#111827]">Featured <span class="text-[#079fd4]">Products</span></h2>
-            <p class="mx-auto max-w-2xl text-slate-600">Explore our most popular generator spare parts and control solutions</p>
+            <h2 class="mb-3 text-4xl font-black text-[#111827]">{{ __('site.home.featured') }}</h2>
+            <p class="mx-auto max-w-2xl text-slate-600">{{ __('site.products.intro') }}</p>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             @forelse ($featuredProducts as $product)
@@ -125,7 +125,7 @@
                     <h3 class="mt-1 line-clamp-2 min-h-10 font-bold text-slate-900">{{ $product->name }}</h3>
                 </article>
             @empty
-                <div class="col-span-full rounded-lg bg-slate-100 p-8 text-center text-slate-500">No products available</div>
+                <div class="col-span-full rounded-lg bg-slate-100 p-8 text-center text-slate-500">{{ __('site.products.empty_title') }}</div>
             @endforelse
         </div>
         <div class="mt-10 flex justify-center">
@@ -140,25 +140,15 @@
 <section class="bg-gradient-to-br from-slate-50 to-white py-20">
     <div class="pf-container grid gap-12 md:grid-cols-2 md:items-center">
         <div>
-            <h2 class="mb-4 text-4xl font-black text-[#111827]">Built for <span class="text-[#079fd4]">Reliability</span></h2>
+            <h2 class="mb-4 text-4xl font-black text-[#111827]">{{ __('site.home.overview_title') }}</h2>
             <p class="mb-6 text-lg text-slate-600">{{ __('site.home.overview') }}</p>
             <ul class="space-y-3">
-                <li class="flex items-center gap-3">
-                    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] font-bold">✓</span>
-                    <span class="text-slate-700">Official distribution partnerships</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] font-bold">✓</span>
-                    <span class="text-slate-700">Generator control expertise</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] font-bold">✓</span>
-                    <span class="text-slate-700">Industrial spare parts quality</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] font-bold">✓</span>
-                    <span class="text-slate-700">Responsive technical support</span>
-                </li>
+                @foreach (trans('site.home.about_points') as $point)
+                    <li class="flex items-center gap-3">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] font-bold">✓</span>
+                        <span class="text-slate-700">{{ $point }}</span>
+                    </li>
+                @endforeach
             </ul>
         </div>
         <div class="relative">
@@ -166,8 +156,8 @@
             <div class="relative z-10 rounded-2xl bg-gradient-to-br from-[#079fd4]/10 to-[#2d247f]/10 p-8">
                 <div class="grid grid-cols-2 gap-4">
                     <div class="pf-stat-card pf-reveal rounded-xl bg-white p-6 text-center shadow-md" style="animation-delay: .05s;">
-                        <div class="pf-count text-3xl font-black text-[#079fd4]" data-countup="30" data-suffix="+">30+</div>
-                        <div class="text-sm font-semibold text-slate-600">Years</div>
+                        <div class="pf-count text-3xl font-black text-[#079fd4]" data-countup="35" data-suffix="+">35+</div>
+                        <div class="text-sm font-semibold text-slate-600">{{ __('site.home.stats.years') }}</div>
                     </div>
                     <div class="pf-stat-card pf-reveal rounded-xl bg-white p-6 text-center shadow-md" style="animation-delay: .12s;">
                         <div class="pf-count text-3xl font-black text-[#2d247f]" data-countup="2016">2016</div>
@@ -191,8 +181,8 @@
 <section class="relative overflow-hidden bg-white py-24">
     <div class="pf-container">
         <div class="mb-16 text-center">
-            <h2 class="mb-3 text-4xl font-black text-[#111827]">Partners of <span class="text-[#079fd4]">Success</span></h2>
-            <p class="mx-auto max-w-2xl text-lg text-slate-600">Trusted by Egypt's leading industrial and engineering companies</p>
+            <h2 class="mb-3 text-4xl font-black text-[#111827]">{{ __('site.home.partners_title') }}</h2>
+            <p class="mx-auto max-w-2xl text-lg text-slate-600">{{ __('site.home.partners_intro') }}</p>
         </div>
 
         <!-- Animated Partners Carousel -->

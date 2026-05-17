@@ -19,12 +19,12 @@
             <!-- Contact Info -->
             <div class="space-y-8">
                 <div>
-                    <h2 class="mb-6 text-2xl font-black text-[#111827]">Get In Touch</h2>
+                    <h2 class="mb-6 text-2xl font-black text-[#111827]">{{ __('site.contact.get_in_touch') }}</h2>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
                             <span class="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4]">📞</span>
                             <div>
-                                <p class="font-semibold text-slate-900">Phone</p>
+                                <p class="font-semibold text-slate-900">{{ __('site.contact.phone_label') }}</p>
                                 <p class="text-slate-600">{{ config('services.power_falcon.phone') }}</p>
                                 <p class="text-slate-600">{{ config('services.power_falcon.phone_alt') }}</p>
                             </div>
@@ -32,7 +32,7 @@
                         <div class="flex items-start gap-4">
                             <span class="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4]">📍</span>
                             <div>
-                                <p class="font-semibold text-slate-900">Address</p>
+                                <p class="font-semibold text-slate-900">{{ __('site.contact.address_label') }}</p>
                                 <p class="text-slate-600">{{ __('site.contact.address') }}</p>
                             </div>
                         </div>
@@ -41,13 +41,13 @@
 
                 <!-- Social Links -->
                 <div>
-                    <h3 class="mb-4 font-bold text-[#111827]">Connect With Us</h3>
+                    <h3 class="mb-4 font-bold text-[#111827]">{{ __('site.contact.connect') }}</h3>
                     <div class="flex flex-wrap gap-3">
                         <a href="https://wa.me/{{ str_replace(['+', ' ', '-'], '', config('services.power_falcon.phone')) }}" target="_blank" class="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 font-bold text-white transition hover:bg-[#20BA58]">
                             💬 {{ __('site.cta.whatsapp') }}
                         </a>
                         <a href="{{ config('services.power_falcon.maps_url') }}" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-[#079fd4] px-4 py-2 font-bold text-[#079fd4] transition hover:bg-[#079fd4]/10">
-                            🗺️ Maps
+                            🗺️ {{ __('site.cta.maps') }}
                         </a>
                     </div>
                 </div>

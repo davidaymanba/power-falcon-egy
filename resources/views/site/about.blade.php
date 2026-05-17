@@ -103,115 +103,82 @@
             <span class="h-2 w-2 rounded-full bg-[#079fd4]"></span>
             <span class="text-sm font-semibold text-[#079fd4] uppercase tracking-wide">{{ __('site.about.title') }}</span>
         </p>
-        <h1 class="mb-4 text-5xl font-black leading-tight text-white md:text-6xl animate-fade-in-up" style="animation-delay: 0.2s;">{{ __('site.about.intro') }}</h1>
+        <h1 class="mx-auto mb-4 max-w-5xl text-4xl font-black leading-tight text-white md:text-6xl animate-fade-in-up" style="animation-delay: 0.2s;">{{ __('site.about.title') }}</h1>
+        <p class="mx-auto max-w-4xl text-lg leading-8 text-slate-200 animate-fade-in-up" style="animation-delay: 0.3s;">{{ __('site.about.intro') }}</p>
     </div>
 </section>
 
-<!-- Timeline Section -->
+<!-- Company Story Section -->
 <section class="bg-white py-20">
     <div class="pf-container">
-        <h2 class="mb-12 text-center text-4xl font-black text-[#111827] animate-fade-in-up">Our <span class="text-[#079fd4]">Journey</span></h2>
-        <div class="space-y-8">
-            <!-- Timeline Item 1: 1990 -->
-            <div class="grid gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center timeline-1 animate-slide-in-left">
-                <div class="rounded-xl border border-slate-200 bg-slate-50 p-8 md:text-right transform transition hover:shadow-lg hover:scale-105 duration-300">
-                    <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/10 px-3 py-1">
-                        <span class="text-sm font-bold text-[#079fd4]">{{ __('site.about.history') }}</span>
-                    </div>
-                    <h3 class="mb-3 text-2xl font-black text-[#111827]">1990</h3>
-                    <p class="text-slate-600">Power Falcon has served the Egyptian market for electric generators and control systems for more than three decades, building a reputation on reliability and technical knowledge.</p>
-                </div>
-                <div class="hidden md:flex md:flex-col md:items-center">
-                    <div class="timeline-dot-1 animate-pulse-scale h-12 w-12 rounded-full border-4 border-[#079fd4] bg-white"></div>
-                    <div class="timeline-line-1 animate-draw-line h-16 w-1 bg-gradient-to-b from-[#079fd4] to-slate-200 origin-top"></div>
-                </div>
-                <div></div>
-            </div>
-
-            <!-- Timeline Item 2: 2016 -->
-            <div class="grid gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center timeline-2 animate-slide-in-right">
-                <div></div>
-                <div class="hidden md:flex md:flex-col md:items-center">
-                    <div class="timeline-dot-2 animate-pulse-scale h-12 w-12 rounded-full border-4 border-[#079fd4] bg-white"></div>
-                    <div class="timeline-line-2 animate-draw-line h-16 w-1 bg-gradient-to-b from-[#079fd4] to-slate-200 origin-top"></div>
-                </div>
-                <div class="rounded-xl border border-slate-200 bg-slate-50 p-8 transform transition hover:shadow-lg hover:scale-105 duration-300">
-                    <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/10 px-3 py-1">
-                        <span class="text-sm font-bold text-[#079fd4]">2016</span>
-                    </div>
-                    <h3 class="mb-3 text-2xl font-black text-[#111827]">SICES</h3>
-                    <p class="text-slate-600">The company strengthened its position by becoming an official distributor in Egypt, expanding advanced control solutions for genset applications.</p>
+        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+            <div class="animate-slide-in-left">
+                <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/10 px-4 py-2">
+                    <span class="h-2 w-2 rounded-full bg-[#079fd4]"></span>
+                    <span class="text-sm font-bold text-[#079fd4]">{{ __('site.about.history') }}</span>
+                </p>
+                <h2 class="mb-5 text-4xl font-black text-[#111827]">{{ __('site.about.title') }}</h2>
+                <div class="space-y-5 text-lg leading-8 text-slate-600">
+                    <p>{{ __('site.about.intro') }}</p>
+                    <p>{{ __('site.about.history_text') }}</p>
                 </div>
             </div>
 
-            <!-- Timeline Item 3: 2025 -->
-            <div class="grid gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center timeline-3 animate-slide-in-left">
-                <div class="rounded-xl border border-slate-200 bg-slate-50 p-8 md:text-right transform transition hover:shadow-lg hover:scale-105 duration-300">
-                    <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/10 px-3 py-1">
-                        <span class="text-sm font-bold text-[#079fd4]">2025</span>
-                    </div>
-                    <h3 class="mb-3 text-2xl font-black text-[#111827]">Mecc Alte</h3>
-                    <p class="text-slate-600">Power Falcon became an official agent for Mecc Alte, offering alternators, smart AVRs, controllers, and battery chargers from a globally recognized manufacturer.</p>
+            <div class="grid gap-4 sm:grid-cols-3 animate-slide-in-right">
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm">
+                    <div class="text-4xl font-black text-[#079fd4]">1991</div>
+                    <div class="mt-2 text-sm font-semibold text-slate-600">{{ __('site.about.history') }}</div>
                 </div>
-                <div class="hidden md:flex md:flex-col md:items-center">
-                    <div class="timeline-dot-3 animate-pulse-scale h-12 w-12 rounded-full border-4 border-[#079fd4] bg-white"></div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm">
+                    <div class="text-4xl font-black text-[#2d247f]">35+</div>
+                    <div class="mt-2 text-sm font-semibold text-slate-600">{{ __('site.home.stats.years') }}</div>
                 </div>
-                <div></div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm">
+                    <div class="text-4xl font-black text-[#079fd4]">24/7</div>
+                    <div class="mt-2 text-sm font-semibold text-slate-600">{{ __('site.cta.contact_us') }}</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Experience & Vision Section -->
+<!-- Vision & Mission Section -->
 <section class="bg-gradient-to-br from-slate-50 to-white py-20">
     <div class="pf-container grid gap-12 md:grid-cols-2">
-        <!-- Technical Experience -->
         <div class="stagger-item animate-slide-in-left rounded-2xl border border-slate-200 bg-white p-8 shadow-md transform transition hover:shadow-xl hover:scale-105 duration-300">
             <div class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#079fd4]/10 px-4 py-2">
-                <span class="text-2xl">🔧</span>
-                <span class="font-bold text-[#079fd4]">{{ __('site.about.experience') }}</span>
-            </div>
-            <h3 class="mb-4 text-2xl font-black text-[#111827]">Technical Expertise</h3>
-            <p class="text-slate-600">The team supports generator manufacturers and panel builders with product selection, control integration, troubleshooting, and reliable spare parts sourcing. Our technical guidance ensures your systems run at peak performance.</p>
-            <ul class="mt-6 space-y-3">
-                <li class="flex items-center gap-3">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] text-sm">✓</span>
-                    <span>Product Selection & Integration</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] text-sm">✓</span>
-                    <span>Control System Support</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4] text-sm">✓</span>
-                    <span>Troubleshooting & Maintenance</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Vision & Goals -->
-        <div class="rounded-2xl border border-[#079fd4] bg-gradient-to-br from-[#079fd4]/5 to-[#2d247f]/5 p-8">
-            <div class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#079fd4]/10 px-4 py-2">
-                <span class="text-2xl">🎯</span>
                 <span class="font-bold text-[#079fd4]">{{ __('site.about.vision') }}</span>
             </div>
-            <h3 class="mb-4 text-2xl font-black text-[#111827]">Vision & Goals</h3>
-            <p class="text-slate-600">Our goal is to be the trusted technical partner for dependable power generation solutions across Egypt, combining quality products with practical field support. We're committed to innovation and reliability in everything we do.</p>
-            <ul class="mt-6 space-y-3">
-                <li class="flex items-center gap-3">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[#079fd4] text-[#079fd4] text-sm">🎯</span>
-                    <span>Premium Product Quality</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[#079fd4] text-[#079fd4] text-sm">🎯</span>
-                    <span>Exceptional Service</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[#079fd4] text-[#079fd4] text-sm">🎯</span>
-                    <span>Market Leadership</span>
-                </li>
-            </ul>
+            <h3 class="mb-4 text-2xl font-black text-[#111827]">{{ __('site.about.vision') }}</h3>
+            <p class="text-lg leading-8 text-slate-600">{{ __('site.about.vision_text') }}</p>
         </div>
+
+        <div class="rounded-2xl border border-[#079fd4] bg-gradient-to-br from-[#079fd4]/5 to-[#2d247f]/5 p-8">
+            <div class="mb-6 inline-flex items-center gap-3 rounded-full bg-[#079fd4]/10 px-4 py-2">
+                <span class="font-bold text-[#079fd4]">{{ __('site.about.mission') }}</span>
+            </div>
+            <h3 class="mb-4 text-2xl font-black text-[#111827]">{{ __('site.about.mission') }}</h3>
+            <p class="text-lg leading-8 text-slate-600">{{ __('site.about.mission_text') }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Goals, Services, Why Us Section -->
+<section class="bg-white py-20">
+    <div class="pf-container grid gap-6 lg:grid-cols-3">
+        @foreach (['goals', 'services', 'why'] as $section)
+            <article class="rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+                <h2 class="mb-6 text-2xl font-black text-[#111827]">{{ __("site.about.$section.title") }}</h2>
+                <ul class="space-y-4">
+                    @foreach (trans("site.about.$section.items") as $item)
+                        <li class="flex items-start gap-3">
+                            <span class="mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#079fd4]/20 text-sm font-bold text-[#079fd4]">✓</span>
+                            <span class="leading-7 text-slate-700">{{ $item }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </article>
+        @endforeach
     </div>
 </section>
 @endsection
