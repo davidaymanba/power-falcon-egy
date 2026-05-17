@@ -86,6 +86,9 @@ return [
                 'حلول مرنة تناسب مختلف القطاعات.',
             ],
         ],
+        'stat_founded_summary' => 'تأسيس الشركة بمهمة واضحة',
+        'stat_experience_summary' => 'قيادة السوق والابتكار',
+        'stat_support_summary' => 'دعم مستمر على مدار الساعة',
     ],
     'products' => [
         'title' => 'المنتجات',

@@ -86,6 +86,9 @@ return [
                 'Flexible solutions for different sectors.',
             ],
         ],
+        'stat_founded_summary' => 'Company Founded',
+        'stat_experience_summary' => 'Market Leader',
+        'stat_support_summary' => '24/7 Support',
     ],
     'products' => [
         'title' => 'Products',

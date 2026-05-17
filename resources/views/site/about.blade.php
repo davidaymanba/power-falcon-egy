@@ -308,19 +308,19 @@
                 <!-- 1991 Card - Appears First -->
                 <div class="stat-box-1 stat-card-hover about-stat-card relative overflow-hidden">
                     <div class="pf-count about-stat-value font-black" data-countup="1991">1991</div>
-                    <p class="about-stat-label">تأسيس الشركة</p>
+                    <p class="about-stat-label">{{ __('site.about.stat_founded_summary') }}</p>
                 </div>
                 
                 <!-- 35+ Years Card - Appears Second -->
                 <div class="stat-box-2 stat-card-hover about-stat-card relative overflow-hidden">
                     <div class="pf-count about-stat-value font-black" data-countup="35" data-suffix="+">35+</div>
-                    <p class="about-stat-label">سنة خبرة</p>
+                    <p class="about-stat-label">{{ __('site.about.stat_experience_summary') }}</p>
                 </div>
                 
                 <!-- 24/7 Contact Card - Appears Third -->
                 <div class="stat-box-3 stat-card-hover about-stat-card relative overflow-hidden">
                     <div class="pf-count about-stat-value font-black" data-countup="24" data-suffix="/7">24/7</div>
-                    <p class="about-stat-label">دعم مستمر</p>
+                    <p class="about-stat-label">{{ __('site.about.stat_support_summary') }}</p>
                 </div>
             </div>
         </div>
