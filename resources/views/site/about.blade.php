@@ -1,96 +1,198 @@
 @extends('layouts.site', ['title' => __('site.brand')])
 
 @section('content')
-<!-- Animation Styles -->
+<!-- Enhanced Animation Styles -->
 <style>
+    /* Core Animations */
     @keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
         }
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
+    
     @keyframes slideInLeft {
         from {
             opacity: 0;
-            transform: translateX(-60px);
+            transform: translateX(-80px);
         }
         to {
             opacity: 1;
             transform: translateX(0);
         }
     }
+    
     @keyframes slideInRight {
         from {
             opacity: 0;
-            transform: translateX(60px);
+            transform: translateX(80px);
         }
         to {
             opacity: 1;
             transform: translateX(0);
         }
     }
-    @keyframes scaleIn {
+    
+    @keyframes zoomIn {
         from {
             opacity: 0;
-            transform: scale(0.95);
+            transform: scale(0.8);
         }
         to {
             opacity: 1;
             transform: scale(1);
         }
     }
-    @keyframes drawLine {
+    
+    @keyframes blurInUp {
         from {
-            height: 0;
             opacity: 0;
+            filter: blur(10px);
+            transform: translateY(30px);
         }
         to {
-            height: 100%;
             opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
         }
     }
-    @keyframes pulseScale {
-        0%, 100% {
-            transform: scale(1);
-            opacity: 1;
+    
+    @keyframes rotateBounce {
+        0% { transform: scale(0.8) rotate(-45deg); opacity: 0; }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    
+    @keyframes floatUp {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes popIn1 {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) translateY(30px);
         }
         50% {
-            transform: scale(1.2);
-            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
         }
     }
-    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
-    .animate-fade-in { animation: fadeIn 1s ease-out; }
-    .animate-slide-in-left { animation: slideInLeft 0.9s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    .animate-slide-in-right { animation: slideInRight 0.9s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    .animate-scale-in { animation: scaleIn 0.6s ease-out; }
-    .animate-draw-line { animation: drawLine 0.8s ease-out forwards; }
-    .animate-pulse-scale { animation: pulseScale 0.6s ease-out forwards; }
     
-    /* Sequential timeline delays */
-    .timeline-1 { animation-delay: 0.5s; }
-    .timeline-2 { animation-delay: 0.9s; }
-    .timeline-3 { animation-delay: 1.3s; }
+    @keyframes popIn2 {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) translateY(30px);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
     
-    .timeline-dot-1 { animation-delay: 0.4s; }
-    .timeline-dot-2 { animation-delay: 0.8s; }
-    .timeline-dot-3 { animation-delay: 1.2s; }
+    @keyframes popIn3 {
+        0% {
+            opacity: 0;
+            transform: scale(0.5) translateY(30px);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
     
-    .timeline-line-1 { animation-delay: 0.1s; }
-    .timeline-line-2 { animation-delay: 0.9s; }
+    /* Animation Classes */
+    .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    .animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+    .animate-slide-in-left { animation: slideInLeft 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    .animate-slide-in-right { animation: slideInRight 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    .animate-zoom-in { animation: zoomIn 0.7s ease-out forwards; }
+    .animate-blur-in-up { animation: blurInUp 1s ease-out forwards; }
+    .animate-rotate-bounce { animation: rotateBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    .animate-float { animation: floatUp 3s ease-in-out infinite; }
+    .animate-sequence-pop { animation: sequencePop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
     
-    /* Stagger animations */
+    /* Staggered Animations */
     .stagger-item:nth-child(1) { animation-delay: 0.1s; }
     .stagger-item:nth-child(2) { animation-delay: 0.2s; }
     .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+    .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+    .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+    .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+    
+    /* Stat Box Sequential Animations - One by one */
+    .stat-box-1 { 
+        animation: popIn1 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+    }
+    .stat-box-2 { 
+        animation: popIn2 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+    }
+    .stat-box-3 { 
+        animation: popIn3 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.4s forwards;
+    }
+    
+    /* Hover Effects */
+    .card-hover {
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-card-hover {
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .stat-card-hover:hover {
+        transform: scale(1.08) translateY(-10px);
+        box-shadow: 0 25px 50px rgba(7, 159, 212, 0.2);
+    }
+    
+    /* Timeline Styles */
+    .timeline-item {
+        position: relative;
+        padding-left: 40px;
+    }
+    
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, #079fd4, #2d247f);
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #079fd4;
+        animation: rotateBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
 </style>
 
 <!-- Hero Section -->
@@ -124,18 +226,35 @@
                 </div>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-3 animate-slide-in-right">
-                <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm">
-                    <div class="text-4xl font-black text-[#079fd4]">1991</div>
-                    <div class="mt-2 text-sm font-semibold text-slate-600">{{ __('site.about.history') }}</div>
+            <div class="grid gap-6 sm:grid-cols-3 animate-slide-in-right">
+                <!-- 1991 Card - Appears First -->
+                <div class="stat-box-1 stat-card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 p-8 border border-slate-200 shadow-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#079fd4]/10 to-[#2d247f]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#079fd4] to-[#2d247f]">1991</div>
+                        <div class="mt-3 text-sm font-bold text-slate-600 uppercase tracking-wider">{{ __('site.about.history') }}</div>
+                        <p class="mt-3 text-xs text-slate-500 leading-relaxed">تأسيس الشركة بمهمة واضحة</p>
+                    </div>
                 </div>
-                <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm">
-                    <div class="text-4xl font-black text-[#2d247f]">35+</div>
-                    <div class="mt-2 text-sm font-semibold text-slate-600">{{ __('site.home.stats.years') }}</div>
+                
+                <!-- 35+ Years Card - Appears Second -->
+                <div class="stat-box-2 stat-card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 p-8 border border-slate-200 shadow-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#2d247f]/10 to-[#079fd4]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#2d247f] to-[#079fd4]">35+</div>
+                        <div class="mt-3 text-sm font-bold text-slate-600 uppercase tracking-wider">سنة خبرة</div>
+                        <p class="mt-3 text-xs text-slate-500 leading-relaxed">قيادة السوق والابتكار</p>
+                    </div>
                 </div>
-                <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center shadow-sm">
-                    <div class="text-4xl font-black text-[#079fd4]">24/7</div>
-                    <div class="mt-2 text-sm font-semibold text-slate-600">{{ __('site.cta.contact_us') }}</div>
+                
+                <!-- 24/7 Contact Card - Appears Third -->
+                <div class="stat-box-3 stat-card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 p-8 border border-slate-200 shadow-lg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#079fd4]/10 to-[#2d247f]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#079fd4] to-[#2d247f]">24/7</div>
+                        <div class="mt-3 text-sm font-bold text-slate-600 uppercase tracking-wider">{{ __('site.cta.contact_us') }}</div>
+                        <p class="mt-3 text-xs text-slate-500 leading-relaxed">دعم مستمر على مدار الساعة</p>
+                    </div>
                 </div>
             </div>
         </div>
