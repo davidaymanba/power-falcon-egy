@@ -170,8 +170,86 @@
     }
     
     .stat-card-hover:hover {
-        transform: scale(1.08) translateY(-10px);
-        box-shadow: 0 25px 50px rgba(7, 159, 212, 0.2);
+        transform: translateY(-8px);
+        box-shadow: 0 24px 48px rgba(7, 159, 212, 0.18);
+    }
+
+    .about-story-grid {
+        display: grid;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .about-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.1rem;
+    }
+
+    .about-stat-card {
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid rgba(45, 36, 127, 0.12);
+        border-radius: 16px;
+        background: #ffffff;
+        box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
+        padding: 1.5rem;
+    }
+
+    .about-stat-card::before {
+        content: '';
+        position: absolute;
+        inset-inline: 1.5rem;
+        top: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: #079fd4;
+        opacity: 0.45;
+    }
+
+    .about-stat-value {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        color: #2d247f;
+    }
+
+    .about-stat-label {
+        margin-top: 0.85rem;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #64748b;
+    }
+
+    @media (min-width: 1024px) {
+        .about-story-grid {
+            grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .about-stats-grid {
+            grid-template-columns: repeat(3, minmax(160px, 1fr));
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scroll-snap-type: x mandatory;
+        }
+
+        .about-stat-card {
+            scroll-snap-align: start;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .about-stats-grid {
+            grid-template-columns: 1fr;
+            overflow: visible;
+        }
+
+        .about-stat-card {
+            min-height: 135px;
+        }
     }
     
     /* Timeline Styles */
@@ -213,7 +291,7 @@
 <!-- Company Story Section -->
 <section class="bg-white py-20">
     <div class="pf-container">
-        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div class="about-story-grid">
             <div class="animate-slide-in-left">
                 <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/10 px-4 py-2">
                     <span class="h-2 w-2 rounded-full bg-[#079fd4]"></span>
@@ -226,35 +304,23 @@
                 </div>
             </div>
 
-            <div class="grid gap-6 sm:grid-cols-3 animate-slide-in-right">
+            <div class="about-stats-grid animate-slide-in-right">
                 <!-- 1991 Card - Appears First -->
-                <div class="stat-box-1 stat-card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 p-8 border border-slate-200 shadow-lg">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#079fd4]/10 to-[#2d247f]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative">
-                        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#079fd4] to-[#2d247f]">1991</div>
-                        <div class="mt-3 text-sm font-bold text-slate-600 uppercase tracking-wider">{{ __('site.about.history') }}</div>
-                        <p class="mt-3 text-xs text-slate-500 leading-relaxed">تأسيس الشركة بمهمة واضحة</p>
-                    </div>
+                <div class="stat-box-1 stat-card-hover about-stat-card relative overflow-hidden">
+                    <div class="pf-count about-stat-value font-black" data-countup="1991">1991</div>
+                    <p class="about-stat-label">تأسيس الشركة</p>
                 </div>
                 
                 <!-- 35+ Years Card - Appears Second -->
-                <div class="stat-box-2 stat-card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 p-8 border border-slate-200 shadow-lg">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#2d247f]/10 to-[#079fd4]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative">
-                        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#2d247f] to-[#079fd4]">35+</div>
-                        <div class="mt-3 text-sm font-bold text-slate-600 uppercase tracking-wider">سنة خبرة</div>
-                        <p class="mt-3 text-xs text-slate-500 leading-relaxed">قيادة السوق والابتكار</p>
-                    </div>
+                <div class="stat-box-2 stat-card-hover about-stat-card relative overflow-hidden">
+                    <div class="pf-count about-stat-value font-black" data-countup="35" data-suffix="+">35+</div>
+                    <p class="about-stat-label">سنة خبرة</p>
                 </div>
                 
                 <!-- 24/7 Contact Card - Appears Third -->
-                <div class="stat-box-3 stat-card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50 p-8 border border-slate-200 shadow-lg">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#079fd4]/10 to-[#2d247f]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative">
-                        <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#079fd4] to-[#2d247f]">24/7</div>
-                        <div class="mt-3 text-sm font-bold text-slate-600 uppercase tracking-wider">{{ __('site.cta.contact_us') }}</div>
-                        <p class="mt-3 text-xs text-slate-500 leading-relaxed">دعم مستمر على مدار الساعة</p>
-                    </div>
+                <div class="stat-box-3 stat-card-hover about-stat-card relative overflow-hidden">
+                    <div class="pf-count about-stat-value font-black" data-countup="24" data-suffix="/7">24/7</div>
+                    <p class="about-stat-label">دعم مستمر</p>
                 </div>
             </div>
         </div>
