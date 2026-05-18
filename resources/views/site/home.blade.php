@@ -160,7 +160,7 @@
                         <div class="text-sm font-semibold text-slate-600">{{ __('site.home.stats.years') }}</div>
                     </div>
                     <div class="pf-stat-card pf-reveal rounded-xl bg-white p-6 text-center shadow-md" style="animation-delay: .12s;">
-                        <div class="pf-count text-3xl font-black text-[#2d247f]" data-countup="1991">1991</div>
+                        <div class="pf-count text-3xl font-black text-[#2d247f]" data-countup="2016">2016</div>
                         <div class="text-sm font-semibold text-slate-600">SICES</div>
                     </div>
                     <div class="pf-stat-card pf-reveal rounded-xl bg-white p-6 text-center shadow-md" style="animation-delay: .19s;">
