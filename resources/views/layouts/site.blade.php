@@ -5,6 +5,7 @@
         ['label' => __('site.nav.home'), 'route' => 'home'],
         ['label' => __('site.nav.about'), 'route' => 'about'],
         ['label' => __('site.nav.products'), 'route' => 'products'],
+        ['label' => __('site.nav.downloads'), 'route' => 'downloads'],
         ['label' => __('site.nav.contact'), 'route' => 'contact'],
     ];
 @endphp

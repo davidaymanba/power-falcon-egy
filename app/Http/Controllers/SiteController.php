@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\DownloadItem;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -51,6 +52,36 @@ class SiteController extends Controller
             'products' => $products,
             'categories' => Category::query()->withCount('products')->orderBy('name_en')->get(),
             'activeCategory' => $request->string('category')->toString(),
+        ]);
+    }
+
+    public function downloads(Request $request): View
+    {
+        $downloads = DownloadItem::query()
+            ->where('is_active', true)
+            ->when($request->filled('search'), function ($query) use ($request) {
+                $search = $request->string('search')->toString();
+
+                $query->where(function ($query) use ($search) {
+                    $query->where('title_en', 'like', "%{$search}%")
+                        ->orWhere('title_ar', 'like', "%{$search}%")
+                        ->orWhere('description_en', 'like', "%{$search}%")
+                        ->orWhere('description_ar', 'like', "%{$search}%")
+                        ->orWhere('url', 'like', "%{$search}%");
+                });
+            })
+            ->when($request->filled('type'), function ($query) use ($request) {
+                $query->where('type', $request->string('type')->toString());
+            })
+            ->orderBy('sort_order')
+            ->latest()
+            ->paginate(12)
+            ->withQueryString();
+
+        return view('site.downloads', [
+            'downloads' => $downloads,
+            'types' => DownloadItem::types(),
+            'activeType' => $request->string('type')->toString(),
         ]);
     }
 

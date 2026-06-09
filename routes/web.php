@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AnalyticsController as AdminAnalyticsController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\DownloadController as AdminDownloadController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('/about', [SiteController::class, 'about'])->name('about');
 Route::get('/products', [SiteController::class, 'products'])->name('products');
+Route::get('/downloads', [SiteController::class, 'downloads'])->name('downloads');
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/language/{locale}', LocaleController::class)->name('locale.switch');
@@ -27,5 +29,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::redirect('/', '/admin/analytics')->name('dashboard');
     Route::get('analytics', [AdminAnalyticsController::class, 'index'])->name('analytics.index');
     Route::resource('categories', AdminCategoryController::class)->except('show');
+    Route::resource('downloads', AdminDownloadController::class);
     Route::resource('products', AdminProductController::class);
 });
