@@ -28,11 +28,17 @@ class ProductController extends Controller
                         ->orWhere('name_ar', 'like', "%{$search}%");
                 });
             })
+            ->when($request->filled('category_id'), function ($query) use ($request) {
+                $query->where('category_id', $request->integer('category_id'));
+            })
             ->latest()
             ->paginate(12)
             ->withQueryString();
 
-        return view('admin.products.index', compact('products'));
+        return view('admin.products.index', [
+            'products' => $products,
+            'categories' => Category::query()->orderBy('name_en')->get(),
+        ]);
     }
 
     public function create(): View
@@ -129,7 +135,7 @@ class ProductController extends Controller
             'solenoid' => 'catalog/products/Solenoid',
             'gauges-and-sensors' => 'catalog/products/gauges and sensors',
             'speed-control-and-loadsharing' => 'catalog/products/speed control and loadsharing',
-            default => 'catalog/products',
+            default => $category ? 'catalog/products/'.$category->slug : 'catalog/products',
         };
     }
 }

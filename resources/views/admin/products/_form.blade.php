@@ -18,13 +18,17 @@
 
 <div class="mt-5 grid gap-5 md:grid-cols-2">
     <label class="block">
-        <span class="mb-2 block text-sm font-bold text-slate-700">{{ __('admin.products.category') }}</span>
+        <span class="mb-2 flex items-center justify-between gap-3 text-sm font-bold text-slate-700">
+            <span>{{ __('admin.products.category') }}</span>
+            <a href="{{ route('admin.categories.create') }}" class="text-xs font-bold text-[#0579a7] hover:text-[#2d247f]">{{ __('admin.categories.create') }}</a>
+        </span>
         <select name="category_id" class="pf-focus w-full rounded border border-slate-200 px-4 py-3">
             <option value="">-</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}" @selected((int) old('category_id', $product->category_id) === $category->id)>{{ $category->name_en }}</option>
             @endforeach
         </select>
+        @error('category_id')<span class="mt-1 block text-sm text-red-600">{{ $message }}</span>@enderror
     </label>
     <label class="block">
         <span class="mb-2 block text-sm font-bold text-slate-700">{{ __('admin.products.image') }}</span>

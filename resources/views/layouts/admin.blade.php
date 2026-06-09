@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title ?? __('admin.products.title') }} | Power Falcon</title>
+    <title>{{ $title ?? __('site.nav.dashboard') }} | Power Falcon</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-slate-100 font-sans text-slate-900 antialiased">
@@ -17,6 +17,8 @@
                 </a>
 
                 <nav class="hidden items-center gap-2 lg:flex">
+                    <a href="{{ route('admin.products.index') }}" class="rounded px-3 py-2 text-sm font-semibold transition {{ request()->routeIs('admin.products.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-600 hover:bg-slate-100' }}">{{ __('admin.products.title') }}</a>
+                    <a href="{{ route('admin.categories.index') }}" class="rounded px-3 py-2 text-sm font-semibold transition {{ request()->routeIs('admin.categories.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-600 hover:bg-slate-100' }}">{{ __('admin.categories.title') }}</a>
                     <a href="{{ route('home') }}" class="rounded px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100">{{ __('site.nav.home') }}</a>
                     <a href="{{ route('locale.switch', app()->getLocale() === 'en' ? 'ar' : 'en') }}" class="rounded border border-slate-200 px-3 py-2 text-sm font-semibold transition hover:border-[#079fd4]">{{ app()->getLocale() === 'en' ? 'AR' : 'EN' }}</a>
                     <form method="POST" action="{{ route('logout') }}">@csrf<button class="rounded bg-[#2d247f] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#231d63]">{{ __('admin.logout') }}</button></form>
@@ -31,6 +33,8 @@
 
             <nav id="pf-mobile-menu" class="hidden border-t border-slate-200/80 bg-white lg:hidden">
                 <div class="pf-container flex flex-col py-1">
+                    <a href="{{ route('admin.products.index') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold transition {{ request()->routeIs('admin.products.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-700 hover:bg-cyan-50' }}">{{ __('admin.products.title') }}</a>
+                    <a href="{{ route('admin.categories.index') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold transition {{ request()->routeIs('admin.categories.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-700 hover:bg-cyan-50' }}">{{ __('admin.categories.title') }}</a>
                     <a href="{{ route('home') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-cyan-50">{{ __('site.nav.home') }}</a>
                     <a href="{{ route('locale.switch', app()->getLocale() === 'en' ? 'ar' : 'en') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold text-[#2d247f] transition hover:bg-cyan-50">{{ app()->getLocale() === 'en' ? 'AR' : 'EN' }}</a>
                     <form method="POST" action="{{ route('logout') }}" class="px-4 py-3">

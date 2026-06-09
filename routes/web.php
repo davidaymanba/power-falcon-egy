@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
@@ -23,5 +24,6 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->middleware('aut
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::redirect('/', '/admin/products')->name('dashboard');
+    Route::resource('categories', AdminCategoryController::class)->except('show');
     Route::resource('products', AdminProductController::class);
 });

@@ -31,7 +31,13 @@ class SiteController extends Controller
 
                 $query->where(function ($query) use ($search) {
                     $query->where('name_en', 'like', "%{$search}%")
-                        ->orWhere('name_ar', 'like', "%{$search}%");
+                        ->orWhere('name_ar', 'like', "%{$search}%")
+                        ->orWhere('description_en', 'like', "%{$search}%")
+                        ->orWhere('description_ar', 'like', "%{$search}%")
+                        ->orWhereHas('category', function ($query) use ($search) {
+                            $query->where('name_en', 'like', "%{$search}%")
+                                ->orWhere('name_ar', 'like', "%{$search}%");
+                        });
                 });
             })
             ->when($request->filled('category'), function ($query) use ($request) {

@@ -3,6 +3,22 @@
 return [
     'login' => 'Admin Login',
     'logout' => 'Logout',
+    'categories' => [
+        'title' => 'Categories',
+        'create' => 'Add Category',
+        'edit' => 'Edit Category',
+        'created' => 'Category created successfully.',
+        'updated' => 'Category updated successfully.',
+        'deleted' => 'Category deleted successfully.',
+        'delete_confirm' => 'Delete this category?',
+        'name_en' => 'English name',
+        'name_ar' => 'Arabic name',
+        'slug' => 'Slug',
+        'products_count' => 'Products',
+        'save' => 'Save Category',
+        'empty' => 'No categories found.',
+        'delete_note' => 'Products in this category will stay in the catalog without a category.',
+    ],
     'products' => [
         'title' => 'Products',
         'create' => 'Add Product',

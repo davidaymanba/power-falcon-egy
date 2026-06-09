@@ -9,9 +9,16 @@
     <a href="{{ route('admin.products.create') }}" class="rounded bg-[#079fd4] px-5 py-3 font-bold text-white">{{ __('admin.products.create') }}</a>
 </div>
 
-<form method="GET" class="mb-5 flex gap-3">
-    <input name="search" value="{{ request('search') }}" placeholder="{{ __('site.products.search_placeholder') }}" class="pf-focus w-full max-w-md rounded border border-slate-200 bg-white px-4 py-3">
+<form method="GET" class="mb-5 grid gap-3 md:grid-cols-[minmax(0,1fr)_240px_auto_auto]">
+    <input name="search" value="{{ request('search') }}" placeholder="{{ __('site.products.search_placeholder') }}" class="pf-focus w-full rounded border border-slate-200 bg-white px-4 py-3">
+    <select name="category_id" class="pf-focus w-full rounded border border-slate-200 bg-white px-4 py-3">
+        <option value="">{{ __('site.products.all_categories') }}</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}" @selected((int) request('category_id') === $category->id)>{{ $category->name_en }}</option>
+        @endforeach
+    </select>
     <button class="rounded bg-[#2d247f] px-5 py-3 font-bold text-white">{{ __('site.cta.search') }}</button>
+    <a href="{{ route('admin.products.index') }}" class="rounded border border-slate-200 px-5 py-3 text-center font-bold text-slate-700">{{ __('site.cta.reset') }}</a>
 </form>
 
 <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
