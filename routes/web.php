@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnalyticsController as AdminAnalyticsController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\AuthController;
@@ -23,7 +24,8 @@ Route::middleware('guest')->group(function () {
 Route::post('/admin/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    Route::redirect('/', '/admin/products')->name('dashboard');
+    Route::redirect('/', '/admin/analytics')->name('dashboard');
+    Route::get('analytics', [AdminAnalyticsController::class, 'index'])->name('analytics.index');
     Route::resource('categories', AdminCategoryController::class)->except('show');
     Route::resource('products', AdminProductController::class);
 });

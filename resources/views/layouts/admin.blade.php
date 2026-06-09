@@ -11,12 +11,13 @@
     <div class="min-h-screen">
         <header class="border-b border-slate-200 bg-white">
             <div class="pf-container flex min-h-18 items-center justify-between gap-4 py-3">
-                <a href="{{ route('admin.products.index') }}" class="flex items-center gap-3">
+                <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3">
                     <img src="{{ asset('images/powerfalcon.jpg') }}" alt="Power Falcon" class="h-10 w-24 rounded object-contain sm:h-11 sm:w-28">
                     <span class="font-bold text-[#2d247f] text-lg sm:text-xl">{{ __('site.nav.dashboard') }}</span>
                 </a>
 
                 <nav class="hidden items-center gap-2 lg:flex">
+                    <a href="{{ route('admin.analytics.index') }}" class="rounded px-3 py-2 text-sm font-semibold transition {{ request()->routeIs('admin.analytics.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-600 hover:bg-slate-100' }}">{{ __('admin.analytics.title') }}</a>
                     <a href="{{ route('admin.products.index') }}" class="rounded px-3 py-2 text-sm font-semibold transition {{ request()->routeIs('admin.products.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-600 hover:bg-slate-100' }}">{{ __('admin.products.title') }}</a>
                     <a href="{{ route('admin.categories.index') }}" class="rounded px-3 py-2 text-sm font-semibold transition {{ request()->routeIs('admin.categories.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-600 hover:bg-slate-100' }}">{{ __('admin.categories.title') }}</a>
                     <a href="{{ route('home') }}" class="rounded px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100">{{ __('site.nav.home') }}</a>
@@ -33,6 +34,7 @@
 
             <nav id="pf-mobile-menu" class="hidden border-t border-slate-200/80 bg-white lg:hidden">
                 <div class="pf-container flex flex-col py-1">
+                    <a href="{{ route('admin.analytics.index') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold transition {{ request()->routeIs('admin.analytics.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-700 hover:bg-cyan-50' }}">{{ __('admin.analytics.title') }}</a>
                     <a href="{{ route('admin.products.index') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold transition {{ request()->routeIs('admin.products.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-700 hover:bg-cyan-50' }}">{{ __('admin.products.title') }}</a>
                     <a href="{{ route('admin.categories.index') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold transition {{ request()->routeIs('admin.categories.*') ? 'bg-cyan-50 text-[#0579a7]' : 'text-slate-700 hover:bg-cyan-50' }}">{{ __('admin.categories.title') }}</a>
                     <a href="{{ route('home') }}" class="border-b border-slate-100 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-cyan-50">{{ __('site.nav.home') }}</a>
