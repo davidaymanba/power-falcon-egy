@@ -22,24 +22,29 @@
 <section class="relative overflow-hidden bg-slate-950 text-white">
     <img src="{{ asset('images/powerfalcon.jpg') }}" alt="Power Falcon" class="absolute inset-0 h-full w-full object-cover opacity-20">
     <div class="absolute inset-0 bg-gradient-to-r from-[#111827] via-[#2d247f]/90 to-[#0579a7]/75"></div>
-    <div class="pf-container relative z-10 grid gap-8 py-14 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
-        <div>
+    <div class="pf-container relative z-10 py-12">
+        <div class="max-w-3xl">
             <h1 class="text-4xl font-black leading-tight md:text-5xl">{{ __('site.downloads.title') }}</h1>
-            <p class="mt-4 max-w-2xl text-base leading-7 text-cyan-50">{{ __('site.downloads.intro') }}</p>
+            <p class="mt-3 max-w-2xl text-base leading-7 text-cyan-50">{{ __('site.downloads.intro') }}</p>
         </div>
-        <form method="GET" class="rounded-lg border border-white/15 bg-white/10 p-4 backdrop-blur">
-            <div class="grid gap-3">
-                <input name="search" value="{{ request('search') }}" placeholder="{{ __('site.downloads.search_placeholder') }}" class="pf-focus w-full rounded border border-white/20 bg-white px-4 py-3 text-slate-900">
-                <select name="type" class="pf-focus w-full rounded border border-white/20 bg-white px-4 py-3 text-slate-900">
+
+        <form method="GET" class="mt-7 max-w-4xl rounded-lg border border-white/20 bg-white/90 p-2 shadow-xl shadow-slate-950/20 backdrop-blur">
+            <div class="grid gap-2 md:grid-cols-[minmax(220px,1fr)_180px_auto_auto] md:items-center">
+                <div class="relative">
+                    <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 rtl:left-auto rtl:right-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                    <input name="search" value="{{ request('search') }}" placeholder="{{ __('site.downloads.search_placeholder') }}" class="pf-focus h-11 w-full rounded-md border border-slate-200 bg-white py-2 pl-10 pr-3 text-sm text-slate-900 shadow-sm rtl:pl-3 rtl:pr-10">
+                </div>
+                <select name="type" class="pf-focus h-11 w-full rounded-md border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 shadow-sm">
                     <option value="">{{ __('site.downloads.all_types') }}</option>
                     @foreach ($types as $type)
                         <option value="{{ $type }}" @selected($activeType === $type)>{{ $typeLabels[$type] ?? $type }}</option>
                     @endforeach
                 </select>
-                <div class="grid grid-cols-2 gap-3">
-                    <button class="rounded bg-[#079fd4] px-5 py-3 font-bold text-white transition hover:bg-[#0579a7]">{{ __('site.cta.search') }}</button>
-                    <a href="{{ route('downloads') }}" class="rounded border border-white/35 px-5 py-3 text-center font-bold text-white transition hover:bg-white/10">{{ __('site.cta.reset') }}</a>
-                </div>
+                <button class="inline-flex h-11 items-center justify-center rounded-md bg-[#079fd4] px-6 text-sm font-black text-white transition hover:bg-[#0579a7]">{{ __('site.cta.search') }}</button>
+                <a href="{{ route('downloads') }}" class="inline-flex h-11 items-center justify-center rounded-md border border-slate-200 px-5 text-sm font-black text-slate-700 transition hover:border-[#079fd4] hover:text-[#0579a7]">{{ __('site.cta.reset') }}</a>
             </div>
         </form>
     </div>
