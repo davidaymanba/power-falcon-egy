@@ -33,7 +33,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="text-lg font-bold text-slate-800">{{ $primaryPhone }}</div>
+                            <div class="text-lg font-bold text-slate-800"><bdi dir="ltr">{{ $primaryPhone }}</bdi></div>
                             <div class="text-sm text-slate-500">Sales &amp; Enquiries</div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="text-lg font-bold text-slate-800">{{ $secondaryPhone }}</div>
+                            <div class="text-lg font-bold text-slate-800"><bdi dir="ltr">{{ $secondaryPhone }}</bdi></div>
                             <div class="text-sm text-slate-500">Sales &amp; Enquiries</div>
                         </div>
                     </div>

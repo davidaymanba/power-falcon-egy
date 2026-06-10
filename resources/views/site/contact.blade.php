@@ -25,8 +25,8 @@
                             <span class="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4]">📞</span>
                             <div>
                                 <p class="font-semibold text-slate-900">{{ __('site.contact.phone_label') }}</p>
-                                <p class="text-slate-600">{{ config('services.power_falcon.phone') }}</p>
-                                <p class="text-slate-600">{{ config('services.power_falcon.phone_alt') }}</p>
+                                <p class="text-slate-600"><bdi dir="ltr">{{ config('services.power_falcon.phone') }}</bdi></p>
+                                <p class="text-slate-600"><bdi dir="ltr">{{ config('services.power_falcon.phone_alt') }}</bdi></p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -90,7 +90,7 @@
                     <div class="grid gap-4 md:grid-cols-2">
                         <div>
                             <label class="mb-2 block font-bold text-[#111827]">{{ __('site.contact.phone') }}</label>
-                            <input type="tel" name="phone" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-[#079fd4] focus:outline-none" value="{{ old('phone') }}">
+                            <input type="tel" name="phone" required dir="ltr" class="w-full rounded-lg border border-slate-300 px-4 py-3 text-left focus:border-[#079fd4] focus:outline-none" value="{{ old('phone') }}">
                             @error('phone')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror

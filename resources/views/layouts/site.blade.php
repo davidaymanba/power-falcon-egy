@@ -106,8 +106,8 @@
             <div>
                 <h3 class="mb-4 font-bold">{{ __('site.nav.contact') }}</h3>
                 <div class="space-y-2 text-sm text-cyan-50">
-                    <p>{{ config('services.power_falcon.phone') }}</p>
-                    <p>{{ config('services.power_falcon.phone_alt') }}</p>
+                    <p><bdi dir="ltr">{{ config('services.power_falcon.phone') }}</bdi></p>
+                    <p><bdi dir="ltr">{{ config('services.power_falcon.phone_alt') }}</bdi></p>
                     <p>{{ __('site.contact.address') }}</p>
                 </div>
             </div>
