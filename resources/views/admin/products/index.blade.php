@@ -40,12 +40,12 @@
                         <td class="px-4 py-3 font-semibold text-slate-900">{{ $product->name_en }}</td>
                         <td class="px-4 py-3 text-slate-600">{{ $product->name_ar }}</td>
                         <td class="px-4 py-3 text-slate-600">{{ $product->category?->name_en }}</td>
-                        <td class="px-4 py-3">
-                            <div class="flex justify-end gap-2">
-                                <a href="{{ route('admin.products.edit', $product) }}" class="rounded border border-slate-200 px-3 py-2 font-bold text-[#2d247f]">Edit</a>
-                                <form method="POST" action="{{ route('admin.products.destroy', $product) }}" data-delete-form>
+                        <td class="px-4 py-3 text-right whitespace-nowrap">
+                            <div class="inline-flex items-center justify-end gap-2">
+                                <a href="{{ route('admin.products.edit', $product) }}" class="inline-flex h-10 min-w-20 items-center justify-center whitespace-nowrap rounded-md border border-[#2d247f]/20 bg-[#2d247f]/5 px-4 text-sm font-black text-[#2d247f] transition hover:border-[#2d247f] hover:bg-[#2d247f] hover:text-white">Edit</a>
+                                <form method="POST" action="{{ route('admin.products.destroy', $product) }}" data-delete-form class="inline-flex">
                                     @csrf @method('DELETE')
-                                    <button type="button" data-delete-button class="rounded border border-red-200 px-3 py-2 font-bold text-red-600">Delete</button>
+                                    <button type="button" data-delete-button class="inline-flex h-10 min-w-24 items-center justify-center whitespace-nowrap rounded-md border border-red-200 bg-red-50 px-4 text-sm font-black text-red-600 transition hover:border-red-600 hover:bg-red-600 hover:text-white">Delete</button>
                                 </form>
                             </div>
                         </td>
