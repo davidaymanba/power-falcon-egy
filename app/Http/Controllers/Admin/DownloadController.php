@@ -138,7 +138,7 @@ class DownloadController extends Controller
 
     private function deleteDownloadFile(?string $filePath): void
     {
-        if (! $filePath || ! str_starts_with($filePath, ['download-files/', 'downloads/'])) {
+        if (! $filePath || ! Str::startsWith($filePath, ['download-files/', 'downloads/'])) {
             return;
         }
 

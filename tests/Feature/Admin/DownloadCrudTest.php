@@ -78,7 +78,7 @@ class DownloadCrudTest extends TestCase
         ]);
     }
 
-    public function test_admin_can_upload_pdf_resource(): void
+    public function test_admin_can_upload_and_delete_pdf_resource(): void
     {
         $admin = User::factory()->create();
         $file = UploadedFile::fake()->create('catalog.pdf', 24, 'application/pdf');
@@ -101,5 +101,14 @@ class DownloadCrudTest extends TestCase
         $this->assertFileExists(public_path($download->file_path));
 
         $this->uploadedFiles[] = $download->file_path;
+
+        $this->actingAs($admin)
+            ->delete(route('admin.downloads.destroy', $download))
+            ->assertRedirect(route('admin.downloads.index'));
+
+        $this->assertDatabaseMissing('download_items', [
+            'id' => $download->id,
+        ]);
+        $this->assertFileDoesNotExist(public_path($download->file_path));
     }
 }
