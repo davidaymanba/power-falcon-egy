@@ -17,10 +17,10 @@
     <div class="pf-container">
         <div class="grid gap-12 lg:grid-cols-3">
             <!-- Contact Info -->
-            <div class="space-y-8">
+            <div class="space-y-8 rtl:ml-auto rtl:max-w-xl rtl:text-right">
                 <div>
                     <h2 class="mb-6 text-2xl font-black text-[#111827]">{{ __('site.contact.get_in_touch') }}</h2>
-                    <div class="space-y-4">
+                    <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <span class="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#079fd4]/20 text-[#079fd4]">📞</span>
                             <div>
