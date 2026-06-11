@@ -10,7 +10,7 @@
     <div class="absolute inset-0 bg-gradient-to-r from-[#2d247f]/60 to-[#079fd4]/30"></div>
     
     <div class="pf-container relative z-10 grid gap-8 md:grid-cols-2 md:items-center">
-        <div>
+        <div class="md:col-start-1 md:row-start-1">
             <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-[#079fd4]/20 px-4 py-2">
                 <span class="h-2 w-2 rounded-full bg-[#079fd4]"></span>
                 <span class="text-sm font-semibold text-[#079fd4] uppercase tracking-wide">{{ __('site.home.eyebrow') }}</span>
@@ -25,84 +25,24 @@
                     {{ __('site.cta.contact_us') }}
                 </a>
             </div>
-            <div class="mt-10 grid grid-cols-1 gap-6 text-white md:grid-cols-3">
-                <div class="pf-count-card pf-reveal" style="animation-delay: .05s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="35" data-suffix="+">35+</div>
-                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.years') }}</div>
-                </div>
-                <div class="pf-count-card pf-reveal" style="animation-delay: .12s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="112" data-suffix="+">112+</div>
-                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.products') }}</div>
-                </div>
-                <div class="pf-count-card pf-reveal" style="animation-delay: .19s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="100" data-suffix="%">100%</div>
-                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.authentic') }}</div>
-                </div>
-            </div>
         </div>
-        <!-- Power Energy Animation Section -->
-        <div class="relative hidden md:flex items-center justify-center h-96">
-            <!-- Animated Background Energy Orbs -->
-            <style>
-                @keyframes energyPulse {
-                    0%, 100% { 
-                        transform: translate(0, 0) scale(1);
-                        opacity: 0.5;
-                    }
-                    50% { 
-                        transform: translate(20px, -20px) scale(1.1);
-                        opacity: 0.8;
-                    }
-                }
-                @keyframes energyRotate {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-                @keyframes lightning {
-                    0%, 100% { 
-                        opacity: 0;
-                        stroke-dasharray: 100;
-                        stroke-dashoffset: 100;
-                    }
-                    20% { opacity: 1; stroke-dasharray: 100; stroke-dashoffset: 0; }
-                    40% { opacity: 0; }
-                    60% { opacity: 1; stroke-dasharray: 100; stroke-dashoffset: 0; }
-                    80% { opacity: 0; }
-                }
-                @keyframes floatOrb {
-                    0%, 100% { transform: translateY(0px) translateX(0px); }
-                    33% { transform: translateY(-30px) translateX(20px); }
-                    66% { transform: translateY(20px) translateX(-20px); }
-                }
-                
-                .energy-orb-1 { animation: energyPulse 4s ease-in-out infinite; }
-                .energy-orb-2 { animation: energyPulse 5s ease-in-out infinite 0.5s; }
-                .energy-orb-3 { animation: energyPulse 6s ease-in-out infinite 1s; }
-                .energy-ring { animation: energyRotate 8s linear infinite; }
-                .lightning-bolt { animation: lightning 4s ease-in-out infinite; }
-                .float-orb { animation: floatOrb 6s ease-in-out infinite; }
-            </style>
-            
-            <!-- Central Energy Core -->
-            <div class="absolute inset-0 flex items-center justify-center">
-                <!-- Outer Ring -->
-                <div class="absolute h-64 w-64 rounded-full border-2 border-[#079fd4]/30 energy-ring"></div>
-                <div class="absolute h-56 w-56 rounded-full border-2 border-[#2d247f]/20 energy-ring" style="animation-direction: reverse;"></div>
-                
-                <!-- Energy Orbs -->
-                <div class="absolute h-32 w-32 rounded-full bg-[#079fd4]/20 blur-2xl energy-orb-1"></div>
-                <div class="absolute -right-16 top-1/4 h-24 w-24 rounded-full bg-[#2d247f]/30 blur-xl energy-orb-2"></div>
-                <div class="absolute -left-12 bottom-1/4 h-20 w-20 rounded-full bg-[#079fd4]/40 blur-lg energy-orb-3"></div>
-                
-                <!-- Central Glow -->
-                <div class="absolute h-12 w-12 rounded-full bg-[#079fd4] blur-md" style="box-shadow: 0 0 40px rgba(7, 159, 212, 0.8);"></div>
-                <div class="absolute h-8 w-8 rounded-full bg-white blur-sm" style="box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);"></div>
-                
-                <!-- Floating Power Symbols -->
-                <svg class="absolute h-40 w-40 float-orb" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path class="lightning-bolt" d="M 50 10 L 60 40 L 45 40 L 70 90 M 50 10 L 40 40 L 55 40 L 30 90" 
-                          stroke="#079fd4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+        <!-- 3D Power Energy Animation Section -->
+        <div class="pf-hero-visual relative flex h-[19rem] items-center justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:h-96" aria-hidden="true">
+            <div class="pf-energy-halo"></div>
+            <div class="pf-energy-scene" data-energy-scene></div>
+        </div>
+        <div class="grid grid-cols-1 gap-6 text-white md:col-start-1 md:row-start-2 md:mt-2 md:grid-cols-3">
+            <div class="pf-count-card pf-reveal" style="animation-delay: .05s;">
+                <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="35" data-suffix="+">35+</div>
+                <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.years') }}</div>
+            </div>
+            <div class="pf-count-card pf-reveal" style="animation-delay: .12s;">
+                <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="112" data-suffix="+">112+</div>
+                <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.products') }}</div>
+            </div>
+            <div class="pf-count-card pf-reveal" style="animation-delay: .19s;">
+                <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="100" data-suffix="%">100%</div>
+                <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.authentic') }}</div>
             </div>
         </div>
     </div>

@@ -354,6 +354,63 @@ html.dark .hover\:bg-slate-100:hover {
     text-shadow: 0 8px 24px rgba(7, 159, 212, .15);
 }
 
+.pf-hero-visual {
+    min-height: 19rem;
+    isolation: isolate;
+    perspective: 1100px;
+}
+
+.pf-energy-halo {
+    position: absolute;
+    width: min(22rem, 90%);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(226, 246, 255, .26), transparent 17%),
+        radial-gradient(circle at 50% 50%, rgba(7, 159, 212, .2), transparent 42%),
+        conic-gradient(from 18deg, rgba(7, 159, 212, .08), rgba(251, 191, 36, .3), rgba(129, 140, 248, .18), rgba(7, 159, 212, .08));
+    box-shadow:
+        inset 0 0 56px rgba(7, 159, 212, .2),
+        0 0 78px rgba(7, 159, 212, .28);
+    filter: blur(.2px);
+    opacity: .68;
+    transform: rotateX(62deg) rotateZ(-14deg);
+    animation: pf-energy-breathe 5.4s ease-in-out infinite;
+}
+
+.pf-energy-halo::before,
+.pf-energy-halo::after {
+    content: "";
+    position: absolute;
+    inset: 9%;
+    border-radius: inherit;
+    border: 1px solid rgba(186, 230, 253, .28);
+}
+
+.pf-energy-halo::after {
+    inset: 19%;
+    border-color: rgba(251, 191, 36, .22);
+}
+
+.pf-energy-scene {
+    position: absolute;
+    inset: -8% -3%;
+    z-index: 1;
+    cursor: grab;
+    touch-action: pan-y;
+    filter: drop-shadow(0 26px 48px rgba(8, 47, 73, .34));
+}
+
+.pf-energy-scene:active {
+    cursor: grabbing;
+}
+
+.pf-energy-scene canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .pf-whatsapp-widget #pf-whatsapp-panel {
     transform-origin: bottom right;
 }
@@ -410,6 +467,16 @@ html.dark .hover\:bg-slate-100:hover {
         gap: 2rem;
     }
 
+    .pf-hero-visual {
+        height: 13.5rem;
+        min-height: 13.5rem;
+        margin-block: .35rem 0;
+    }
+
+    .pf-energy-scene {
+        inset: -3% -4%;
+    }
+
     .pf-whatsapp-widget {
         right: 1rem;
         bottom: 1rem;
@@ -450,5 +517,23 @@ html.dark .hover\:bg-slate-100:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes pf-energy-breathe {
+    0%,
+    100% {
+        opacity: .58;
+        transform: rotateX(62deg) rotateZ(-14deg) scale(.97);
+    }
+    50% {
+        opacity: .76;
+        transform: rotateX(62deg) rotateZ(8deg) scale(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pf-energy-halo {
+        animation: none;
     }
 }
