@@ -51,14 +51,8 @@
     "file": "assets/instrument-sans-600-normal-DMks36a2.woff",
     "src": "_instrument-sans-600-normal-DMks36a2.woff"
   },
-  "node_modules/three/build/three.module.js": {
-    "file": "assets/three.module-CQ70EMKJ.js",
-    "name": "three.module",
-    "src": "node_modules/three/build/three.module.js",
-    "isDynamicEntry": true
-  },
   "resources/css/app.css": {
-    "file": "assets/app-CGM_gPCD.css",
+    "file": "assets/app-BYYozMmg.css",
     "name": "app",
     "names": [
       "app.css"
@@ -67,12 +61,9 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DYXss3R_.js",
+    "file": "assets/app-xqDWdkaG.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true,
-    "dynamicImports": [
-      "node_modules/three/build/three.module.js"
-    ]
+    "isEntry": true
   }
 }
