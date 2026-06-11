@@ -25,18 +25,18 @@
                     {{ __('site.cta.contact_us') }}
                 </a>
             </div>
-            <div class="mt-10 grid grid-cols-1 gap-6 text-white md:grid-cols-3">
+            <div class="mt-10 grid grid-cols-3 gap-3 text-white sm:gap-6">
                 <div class="pf-count-card pf-reveal" style="animation-delay: .05s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="35" data-suffix="+">35+</div>
-                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.years') }}</div>
+                    <div class="pf-count text-base font-black text-[#079fd4] sm:text-lg md:text-2xl" data-countup="35" data-suffix="+">35+</div>
+                    <div class="text-[.68rem] leading-tight text-slate-300 sm:text-xs md:text-sm">{{ __('site.home.stats.years') }}</div>
                 </div>
                 <div class="pf-count-card pf-reveal" style="animation-delay: .12s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="112" data-suffix="+">112+</div>
-                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.products') }}</div>
+                    <div class="pf-count text-base font-black text-[#079fd4] sm:text-lg md:text-2xl" data-countup="112" data-suffix="+">112+</div>
+                    <div class="text-[.68rem] leading-tight text-slate-300 sm:text-xs md:text-sm">{{ __('site.home.stats.products') }}</div>
                 </div>
                 <div class="pf-count-card pf-reveal" style="animation-delay: .19s;">
-                    <div class="pf-count text-lg font-black text-[#079fd4] md:text-2xl" data-countup="100" data-suffix="%">100%</div>
-                    <div class="text-xs text-slate-300 md:text-sm">{{ __('site.home.stats.authentic') }}</div>
+                    <div class="pf-count text-base font-black text-[#079fd4] sm:text-lg md:text-2xl" data-countup="100" data-suffix="%">100%</div>
+                    <div class="text-[.68rem] leading-tight text-slate-300 sm:text-xs md:text-sm">{{ __('site.home.stats.authentic') }}</div>
                 </div>
             </div>
         </div>
