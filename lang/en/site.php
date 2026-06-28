@@ -136,7 +136,7 @@ return [
         'subject' => 'Subject',
         'message' => 'Message',
         'success' => 'Thank you. Your message has been received and our team will contact you shortly.',
-        'address' => '4 Dr Mohammed Fouad Shokry, Bein Al Ganayen, El Weili, Cairo Governorate 4390202',
+        'address' => '4 Mosa Katawy St. Wailly - Abasia, Cairo, Egypt',
     ],
     'footer' => [
         'products_text' => 'Diesel generators, power equipment, spare parts, control solutions, and technical support.',
